@@ -1,0 +1,87 @@
+Q.(Program to place all the elements at even nodes after the elements at odd nodes)?
+/*   Example-- 
+                      i/p:  1-->2-->3-->4-->5-->N
+                      o/p:  1-->3-->5-->2-->4-->N   */
+#include<iostream>
+using namespace std;
+class node{
+            public:
+                       int data;
+                       node* next;;                       
+                          node(int val){
+                           data=val;
+                           next=NULL;
+                       }
+                      };
+void elementsAtTail(node* &head,int k){
+node* n=new node(k);
+if(head==NULL){
+     head=n;
+     return;
+     }
+  node* temp=head;
+   while(temp->next != NULL){
+   temp=temp->next;
+   }
+   temp->next=n;
+  
+   }
+  
+  void f(node* &head){
+       if(head==NULL){
+             return;
+             }
+      node* temp1=head;
+      node* temp2=head->next;
+      node* temp3=head->next;
+      while(temp2 != NULL){
+           if(temp2->next==NULL){
+                  break;
+                  }
+             temp1->next=temp1->next->next;
+             temp1=temp1->next;
+             temp2->next=temp1->next;
+             temp2=temp2->next;
+             }
+            temp1->next=temp3;
+            }      
+   void display(node* head){
+       if(head==NULL){
+         cout<<"\nNo element";
+         return;
+        } 
+   node* temp=head;
+   while(temp != NULL ){
+    cout<<temp->data<<" ";
+    temp=temp->next;
+    }
+    }
+   int main(){
+   node* head1=NULL;
+  node* head2=NULL;   
+     elementsAtTail(head1,1);
+       elementsAtTail(head1,2);
+      elementsAtTail(head1,3);
+       elementsAtTail(head1,4);
+       elementsAtTail(head1,5);  
+        elementsAtTail(head1,6);  
+        elementsAtTail(head2,4);   
+         elementsAtTail(head2,26);   
+        elementsAtTail(head2,30);   
+        elementsAtTail(head2,34);   
+       elementsAtTail(head2,56);    
+       cout<<"1st Linked-list- ";
+       display(head1);
+       
+       cout<<endl;
+      cout<<"2nd linked-list- ";
+      display(head2); 
+         f(head1);
+        f(head2);       
+           cout<<endl; 
+         display(head1);
+         cout<<endl;
+         display(head2); 
+             cout<<endl;
+                return 0;
+                }
