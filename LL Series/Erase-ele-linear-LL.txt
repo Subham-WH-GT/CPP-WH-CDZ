@@ -1,0 +1,85 @@
+Q.(Program to erase a particular element from a list considering all the corner cases)?
+/* exmple- 2 10 4 5 7
+                i/p-2
+                o/p-10 4 5 7
+                i/p-null(when list is null)
+                o/p-null*/
+                
+#include<iostream>
+using namespace std;
+class node{
+       public:
+           int data;
+           node* next;
+           node(int val){
+           data=val;
+           next=NULL;
+           }
+          };
+void elements(node* &head,int num){
+   node* n=new node(num);
+   node* temp=head;
+ if(head==NULL){
+     head=n;
+     return;
+     }
+  while(temp->next !=NULL){
+    temp=temp->next;
+    }
+   temp->next=n;
+   cout<<endl; 
+   }
+  void display(node *&head){
+   if(head==NULL){
+     cout<<"Link-list contain  no elements!";
+     cout<<endl;
+     return;
+     }  
+  node * temp=head;
+    while(temp!=NULL){
+     cout<<temp->data<<" ";
+     temp=temp->next;
+     }
+    } 
+  void erase(node* &head,int a){
+   if(head==NULL){
+    cout<<"No element is there to erase! \n";
+    return;
+    }
+   else if(head->data==a){
+      node* del=head;
+      head=head->next;
+      delete del;
+      return;
+      }          
+    node* temp=head;
+    while(temp->next !=NULL){
+      if(temp->next->data==a){
+         node * del=temp->next;
+         temp->next=temp->next->next;
+         delete del;
+         return;
+         }
+       temp=temp->next;
+       }  
+     cout<<"Element is not present in the list!";
+     cout<<endl;
+     }    
+   int main(){
+   cout<<"Elements of the linked-list are:\n";
+   node *head=NULL;
+   elements(head,2);
+   //elements(head,4);
+   //elements(head,6);
+   //elements(head,8);
+   //elements(head,10);
+   display(head);
+   int a;
+   cout<<"\nEnter a number to delete:";
+   cin>>a;
+   erase(head,a);
+   cout<<"Your list has now following elements:\n";
+   display(head);
+   cout<<endl;
+   return 0;
+   }

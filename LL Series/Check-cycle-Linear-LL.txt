@@ -1,0 +1,78 @@
+Q.(Program to create and check presence of cycle in linked-list)?
+#include<iostream>
+using namespace std;
+// code to create a node--
+class node{
+   public:
+   int data;
+   node* next;
+   // constructor for creating nodes---
+   node(int val){
+     data=val;
+     next=NULL;
+     }
+   };
+   // code to input elements in linked list--
+  void insertElementAtTail(node* &head,int num){
+      node* n=new node(num);
+      node* temp=head;
+      if(head==NULL){
+        head=n;
+        return;
+        }
+      while(temp->next !=NULL){
+          temp=temp->next;
+          }
+        temp->next=n;
+        }
+        void cycle(node * head,int k){
+        node* temp=head;
+        node* connect;
+        int count=1;
+        while(temp->next!=NULL){
+                       if(count==k){
+                       connect=temp;
+                       }
+               temp=temp->next;
+               count++;
+               }
+             temp->next=connect;
+             }
+         void checkcycle(node* head){
+         node * slow=head;
+         node* fast=head;
+         while(fast!=NULL and fast->next!=NULL){
+               slow=slow->next;
+               fast=fast->next->next;
+               if(slow==fast){
+                 cout<<"Cycle present";
+                 return;
+                 }
+               }
+             cout<<"Cycle not present!";
+             
+             }          
+      // code to display your linked-list---  
+     void display(node *head){
+         node* temp=head;
+         while(temp !=NULL){
+     cout<<temp->data<<" ";
+     temp=temp->next;
+     }
+    cout<<endl;
+    }
+  int main(){
+    node * head=NULL;
+    insertElementAtTail(head,1);
+    insertElementAtTail(head,2);
+    //insertElementAtTail(head,3);
+    //insertElementAtTail(head,4);
+    //insertElementAtTail(head,5);
+     //insertElementAtTail(head,9);
+     //insertElementAtTail(head,11);
+    cout<<"Displaying your linked-list below\n";
+    display(head);
+    cycle(head,1);
+    checkcycle(head);
+    return 0;
+   }

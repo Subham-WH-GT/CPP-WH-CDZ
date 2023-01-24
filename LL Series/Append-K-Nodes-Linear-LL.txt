@@ -1,0 +1,121 @@
+Q.(Program to append last k nodes in linear linked-list)?
+/* ----i/p->1 2  3 4 5  6
+            k=2
+            o/p->5 6 1 2 3 4
+    ----i/p->1 2 3 4 5 
+            k=6
+            o/p->5 1 2 3 4 
+            */  
+#include<iostream>
+using namespace std;
+class node{
+            public:
+                       int data;
+                       //node*prev;
+                       node*next;
+                       node(int val){
+                       data=val;
+                       //prev=NULL;
+                       next=NULL;
+                       }
+                      };
+void elementsAtTail(node* &head,int k){
+node* n=new node(k);
+if(head==NULL){
+     head=n;
+     return;
+     }
+  node* temp=head;
+   while(temp->next != NULL){
+   temp=temp->next;
+   }
+   temp->next=n;
+   //n->prev=temp;
+   }
+   void display(node * head){
+   if(head==NULL){
+          return;
+          }
+   node* temp=head;
+   while(temp != NULL){
+       cout<<temp->data<<" ";
+       temp=temp->next;
+       }
+       }
+  int length(node * head){
+  node* temp=head;
+  int l=0;
+  while(temp != NULL){
+         l++;
+         temp=temp->next;
+         }
+       return l;
+       }
+    node * append(node * head,int k){
+    if(head==NULL){
+      cout<<"Linked-list is null so can't be appended!";
+      return NULL;
+      }
+     if(head->next==NULL){
+         return head;
+         } 
+    node* temp=head;
+    int count=1;
+    int l=length(head);
+      if(k==0 || k==l){
+           return head;
+           }
+        else if(k>l){
+             int app=k%l;
+                      if(app==0){
+                           return head;
+                           }
+             while(count != l-app){
+        temp=temp->next;
+         count++;
+         }
+        node * newhead=temp->next;
+        node* temp2=newhead;
+        while(temp2->next != NULL){
+               temp2=temp2->next;
+               } 
+              temp2->next=head;
+              temp->next=NULL;
+              return newhead;
+              }        
+    while(count != l-k){
+        temp=temp->next;
+         count++;
+         }
+        node * newhead=temp->next;
+        node* temp2=newhead;
+        while(temp2->next != NULL){
+               temp2=temp2->next;
+               } 
+              temp2->next=head;
+              temp->next=NULL;
+              return newhead;
+              }     
+       /void display(node &head){
+   node* temp=head;
+   while(temp != NULL){
+    cout<<temp->data<<" ";
+    temp=temp->next;
+    }
+    }*/
+    int main(){
+     node * head=NULL;
+      //elementsAtTail(head,32);
+      //elementsAtTail(head,16);
+      //elementsAtTail(head,6);
+      elementsAtTail(head,4);
+      elementsAtTail(head,2);       
+      display(head);
+      int a;
+      cout<<"\nEnter the number of last nodes to append at first:\n";
+      cin>>a;
+      node * newhead=append(head,a);
+      display(newhead);
+      cout<<endl;
+      return 0;
+      }

@@ -1,0 +1,59 @@
+Q.(Input a circular linked-list)?
+  /* Example- 1-->2-->3-->4
+                          |                       |
+                         <-------------    */                 
+#include<iostream>
+using namespace std;
+class node{
+            public:
+                       int data;
+                       node* next;;                       
+                          node(int val){
+                           data=val;
+                           next=NULL;
+                       }
+                      };
+void elementsAtTail(node* &head,int k){
+node* n=new node(k);
+if(head==NULL){
+     head=n;
+     n->next=head;
+     return;
+     }
+  node* temp=head;
+   while(temp->next != head){
+   temp=temp->next;
+   }
+   temp->next=n;
+  n->next=head;
+   }
+    
+   void display(node* head){
+   node* temp=head;
+   while(temp->next != head){
+    cout<<temp->data<<" ";
+    temp=temp->next;
+    }
+    cout<<temp->data;
+    }
+   int main(){
+   node* head1=NULL;
+   node* head2=NULL;   
+      elementsAtTail(head1,3);
+       elementsAtTail(head1,6);
+       elementsAtTail(head1,8);
+       elementsAtTail(head1,11);
+       elementsAtTail(head1,13);  
+        elementsAtTail(head2,4);   
+         elementsAtTail(head2,26);   
+         elementsAtTail(head2,30);   
+          elementsAtTail(head2,34);   
+          elementsAtTail(head2,56);    
+       cout<<"1st Linked-list- ";
+       display(head1);
+       cout<<endl;
+       cout<<"2nd linked-list- ";
+       display(head2);
+                cout<<endl;
+                return 0;
+                }
