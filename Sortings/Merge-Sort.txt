@@ -1,0 +1,71 @@
+Q.(Program to sort an array using MERGE SORT)?
+## Merge-SORT algo--Repeatedly break the original array into sub-arrays till every 
+       sub-arrays contains 1 elements and then merge it in sorted manner..
+#include<iostream>
+using namespace std;
+void merge(int array[],int lp,int mid,int rp){
+    int n1=mid-lp+1;
+    int n2=rp-mid;
+    int temparray1[n1];
+    int temparray2[n2];
+    for(int i=0;i<n1;i++){
+      temparray1[i]=array[lp+i];
+      }
+    for(int i=0;i<n2;i++){
+         temparray2[i]=array[mid+1+i];
+         }  
+    int i=0,k=lp,j=0;
+  
+    while(i<n1 and j<n2){
+        
+      if(temparray1[i]<temparray2[j]){
+         array[k]=temparray1[i];
+         i++;
+         k++;
+         }
+       else{
+         array[k]=temparray2[j];
+         j++;
+         k++;
+         }
+        }
+        while(i<n1){
+        array[k]=temparray1[i];
+       i++;
+       k++;
+       }
+       while(j<n2){
+       array[k]=temparray2[j];
+          k++;
+          j++;      
+       }
+       }    
+void mergesort(int  array[],int lp,int rp){
+ if(lp<rp){
+   int mid=(lp+rp)/2;
+   mergesort(array,lp,mid);
+   mergesort(array,mid+1,rp);
+   merge(array,lp,mid,rp);
+   }
+  } 
+int main(){
+int n;
+cout<<"Enter the total element of the array:";
+cin>>n;
+int array[n];
+for(int i=0;i<n;i++){
+   cin>>array[i];
+   }
+ cout<<"Your Input array is:\n";
+ for(int i=0;i<n;i++){
+   cout<<array[i]<<" ";
+   }
+   int lp=0,rp=n-1;
+    mergesort(array,lp,rp);
+  cout<<"\nYour sorted array is-\n";
+  for(int i=0;i<n;i++){
+   cout<<array[i]<<" ";
+   }
+   cout<<endl;
+   return 0;
+   }
