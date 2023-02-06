@@ -1,0 +1,57 @@
+Q.(Program to add two given matrices and print the result matrix)?
+#include<iostream>
+using namespace std;
+int add(int a,int b){
+  int sum=a+b;
+  return sum;
+  }
+int main()
+{
+  int a,b;
+  cout<<"Enter the total row for matrix1 and matrix2:";
+  cin>>a;
+  cout<<"Enter the total column for matrix1 and matrix2:";
+  cin>>b;
+  int matrix1[a][b];
+  int matrix2[a][b];
+  int matrix3[a][b];
+  cout<<"Element of matrix 1 are-";
+  for(int i=0;i<a;i++){
+    for(int j=0;j<b;j++){
+       cin>>matrix1[i][j];
+       }
+      }
+   cout<<"Element of matrix2 are-";
+    for(int i=0;i<a;i++){
+      for(int j=0;j<b;j++){
+         cin>>matrix2[i][j];
+         }
+        }
+      cout<<"Your matrix1 is-\n";
+      for(int i=0;i<a;i++){
+    for(int j=0;j<b;j++){
+       cout<<matrix1[i][j];
+       }
+       cout<<endl;
+      }  
+      cout<<"Your matrix2 is-\n";
+      for(int i=0;i<a;i++){
+    for(int j=0;j<b;j++){
+       cout<<matrix2[i][j];
+       }
+       cout<<endl;
+      }
+        for(int i=0;i<a;i++){
+       for(int j=0;j<b;j++){
+         matrix3[i][j]=add(matrix1[i][j],matrix2[i][j]);
+         }
+         }
+         for(int i=0;i<a;i++){
+       for(int j=0;j<b;j++){
+         cout<<matrix3[i][j]<<" ";
+         }
+         cout<<endl;
+         }
+       cout<<endl;
+       return 0;
+      }

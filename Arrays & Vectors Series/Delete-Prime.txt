@@ -1,0 +1,44 @@
+Q.(Program to delete prime numbers from an array)?
+#include<iostream>
+#include<cmath>
+using namespace std;
+bool prime(int &a)
+{
+  int factor=0;
+  for(int i=1;i<=a;i++)
+          {
+             if(a%i==0){
+               factor+=1;
+               }
+          }
+        if(factor==2)
+          return true;
+          else
+          return false;
+    }
+int main()
+{
+int a;
+cout<<"Enter the number of elements:";
+cin>>a;
+int array[a];
+for(int i=0;i<a;i++)
+{
+  cin>>array[i];
+  }
+  for(int i=0;i<a;i++){
+      if(prime(array[i])){
+           for(int j=i;j<a;j++){
+              array[j]=array[j+1];
+              }
+            i--;
+            a--;
+           }
+        }
+     cout<<"Final elements of the array are:";
+     for(int i=0;i<a;i++)
+            {
+            cout<<array[i]<<" ";
+            }
+         return 0;
+       }

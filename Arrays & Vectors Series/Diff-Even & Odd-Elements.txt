@@ -1,0 +1,58 @@
+Q.(To find diff btwn sum of all even and odd elements in array)#NOT brute force!
+#include<iostream>
+using namespace std;
+int code(int array[],int &a){
+   int lp=0,rp=a-1,evensum=0,oddsum=0;
+   while(lp<=rp){
+   if(lp!=rp){
+    if(array[lp]%2==0 and array[rp]%2==0){
+      evensum+=array[lp]+array[rp];
+      lp++;
+      rp--;
+      }
+   else if(array[lp]%2==0 and array[rp]%2 !=0){
+    evensum+=array[lp];
+    oddsum+=array[rp];
+    lp++;
+      rp--;
+    }
+   else if(array[lp]%2 !=0 and array[rp]%2==0){
+     evensum+=array[rp];
+     oddsum+=array[lp];
+     lp++;
+      rp--;
+     }
+     
+    else if(array[lp]%2 !=0 and array[rp]%2!=0){
+     oddsum+=array[lp]+array[rp];
+     lp++;
+      rp--;
+     }
+     }
+   else if(lp==rp){
+     if(array[lp]%2==0){
+       evensum+=array[lp];
+       lp++;
+       }
+      else if(array[lp]%2!=0){
+      oddsum+=array[lp];
+      lp++;
+      }
+     }       
+   }
+   
+  return evensum-oddsum;
+  } 
+int main()
+{
+  int a;
+  cout<<"Enter total element of array=\n";
+  cin>>a;
+  int array[a];
+  for(int i=0;i<a;i++){
+    cin>>array[i];
+    }
+   cout<<code(array,a);
+   cout<<endl;
+   return 0;
+   }

@@ -1,0 +1,68 @@
+Q.(A sorted array will be given of size n,input an integer x;find the number of unique pair whose sum gives x)?
+/* 111222  for x=3
+ans-1
+   0012355   for x=5
+     ans-2 */
+#include<iostream>
+#include<vector>
+using namespace std;
+int pairs(vector<int>&vec,int &a){
+  int x;
+  cout<<"Input number:\n";
+  cin>>x;
+  cout<<"No. of  pairs is/are:\n";
+  int num=0,lp=0,rp=a-1;
+  while(lp<=rp){
+          if(lp==0 || rp==a-1){
+            if(vec[lp]+vec[rp]==x){
+            num++;
+            lp++;
+            rp--;
+        }
+         else if(vec[lp]+vec[rp]>x){
+        rp--;
+        }
+         else if(vec[lp]+vec[rp]<x){
+        lp++;
+        }
+       }   
+     else if(lp>0 and rp<a-1){
+                    if(vec[lp]==vec[lp-1]){
+              lp++;
+              }
+            else if(vec[rp]==vec[rp+1]){
+                 rp--;
+                 }
+                 
+             else{
+              if(vec[lp]+vec[rp]==x){
+             num++;
+             lp++;
+             rp--;
+            }         
+        
+            else if(vec[lp]+vec[rp]>x){
+               rp--;
+               }
+              else if(vec[lp]+vec[rp]<x){  
+                  lp++;
+                  }      
+            }
+         }   
+}         
+       return num;
+      }                     
+int main()
+{
+ int a;
+ cout<<"Enter the total element in array:\n";
+ cin>>a;
+ vector<int>vec(a);
+ for(int i=0;i<a;i++){
+   cin>>vec[i];
+   }
+   
+   cout<<pairs(vec,a);
+   cout<<endl;
+   return 0;
+   }

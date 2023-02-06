@@ -1,0 +1,55 @@
+Q.(Program to print sum of elements in rectangle using PREFIX_SUM concept only row wise)?
+#include<iostream>
+#include<vector>
+using namespace std;
+int rectanglesum(vector<vector<int>>&vec,int&r1,int  &c1,int &r2,int &c2)
+{
+   int sum=0;
+  for(int i=0;i<vec.size();i++){
+    for(int j=1;j<vec[0].size();j++){
+       vec[i][j]=vec[i][j]+vec[i][j-1];
+       }
+      }
+     for(int i=r1;i<=r2;i++){
+       if(c1!=0){ 
+    sum=sum+(vec[i][c2]-vec[i][c1-1]);  
+   }
+   else{
+     sum=sum+vec[i][c2];
+     }
+     }
+   return sum;
+  }      
+int main()
+{
+ int a,b;
+ cout<<"Enter the total rows:\n";
+ cin>>a;
+ cout<<"Enter the total column:\n";
+ cin>>b;
+ vector<vector<int>>vec(a,vector<int>(b));
+ for(int i=0;i<a;i++){
+    for(int j=0;j<b;j++){
+       cin>>vec[i][j];
+       }
+      } 
+    cout<<"Your array is:\n";
+     for(int i=0;i<a;i++){
+    for(int j=0;j<b;j++){
+       cout<<vec[i][j];
+       }
+       cout<<endl;
+      } 
+      int r1,c1,r2,c2;
+      cout<<"Enter first coordinate=";
+      cin>>r1>>c1;
+      cout<<"Enter second co-ordinate=";
+      cin>>r2>>c2;
+      
+      
+    cout<<rectanglesum(vec,r1,c1,r2,c2);
+
+   
+    cout<<endl;
+    return 0;
+    }

@@ -1,0 +1,29 @@
+Q.(Find the number of triplets whose sum gives the value of x;)?
+#include<iostream>
+using namespace std;
+int main(){
+    int array[7];
+    cout<<"seven elements of the array are:\n";
+    for(int i=0;i<7;i++)
+    {
+        cin>>array[i];
+    }
+    int sum,triplets=0;
+    cout<<"Enter the sum:";
+    cin>>sum;
+    for(int i=0;i<7;i++)
+    {
+        for(int j=(i+1);j<7;j++)
+        {
+          for(int k=(i+2);k<7;k++)
+          {
+             if(array[i]+array[j]+array[k]==sum)
+             {
+                 triplets++;
+             }
+          }
+        }
+    }
+    cout<<"Number of triplets="<<triplets;
+    return 0;
+}

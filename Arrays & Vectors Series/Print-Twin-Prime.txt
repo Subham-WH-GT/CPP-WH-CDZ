@@ -1,0 +1,32 @@
+Q.(Program to input a value of n and print all the twin-primes till n)?
+#include<iostream>
+using namespace std;
+void twinprime(int a){
+int array[a],k=0;
+for(int i=2;i<=a;i++){
+   int factor=0;
+   for(int j=1;j<=i;j++){
+ if(i%j==0){
+  factor++;
+  }
+ } 
+  if(factor==2){
+     array[k++]=i;
+         }
+   } 
+    cout<<"All your twin primes are:"; 
+ for(int i=0;i<k-1;i++){
+  if(array[i+1]-array[i]==2){
+    cout<<"("<<array[i]<<","<<array[i+1]<<")"<<" ";
+    }
+  }
+  }  
+int main()
+{
+int a;
+cout<<"Input the range:";
+cin>>a;
+twinprime(a);
+cout<<endl;
+return 0;
+}

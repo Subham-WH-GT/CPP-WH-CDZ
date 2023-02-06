@@ -1,0 +1,58 @@
+Not by brute_force(To print total elements strictly greater than x;)?
+#include<iostream>
+#include<vector>
+using namespace std;
+void sort(vector<int>&vec,int &a){
+  for(int i=0;i<a;i++){
+     for(int j=i+1;j<a;j++){
+     if(vec[i]>vec[j]){
+       int temp=vec[i];
+       vec[i]=vec[j];
+       vec[j]=temp;
+       }
+      }
+     }
+    }   
+     
+void number(vector<int>&vec,int a)
+{
+int b;
+  cout<<"Input Number:\n";
+  cin>>b;
+  int lp=0,rp=a-1;
+  while(lp<=rp){
+    if (vec[lp]>b){
+       cout<<a-lp;
+       return;
+       }
+     else if(vec[rp]<=b){
+           if(rp==a-1){
+             cout<<"No Element is greater!";
+             return;
+             }
+             else{
+     cout<<a-(rp+1);
+     return ;
+     }
+    }  
+     rp--;
+  lp++; 
+    }
+    
+    return;
+ } 
+     
+int main()
+{
+  int a;
+  cout<<"Enter total element:";
+  cin>>a;
+  vector<int>vec(a);
+  for(int i=0;i<a;i++){
+    cin>>vec[i];
+    }
+    sort(vec,a);
+  number(vec,a);
+  cout<<endl;
+  return 0;
+  }

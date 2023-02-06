@@ -1,0 +1,11 @@
+Q.(Program to execute entire sentense of a STRING)?
+#include<iostream>
+using namespace std;
+int main()
+{
+string a;
+cout<<"Enter string:";
+getline(cin,a);
+cout<<"Result="<<a;
+return 0;
+}

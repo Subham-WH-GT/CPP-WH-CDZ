@@ -1,0 +1,12 @@
+(Programme to print a^b by using pow function)?                                                                                                                                                                 #include<iostream>
+#include<cmath>
+using namespace std;
+int main()
+{
+int a,b,result;
+ cout<<"Enter the value of base and expo. resp.";
+ cin>>a>>b;
+ result=pow(a,b);
+ cout<<"Result="<<result;
+return 0;
+}

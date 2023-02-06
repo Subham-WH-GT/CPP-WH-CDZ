@@ -1,0 +1,22 @@
+Q (search if a given element is present in the array or not. if not then return -1 else return index of the element )?                                                                  #include<iostream>
+using namespace std;
+int main()
+{
+   int i,a,ans=-1;
+   int array[]={1,2,3,4,5};
+cout<<"Enter any element:";
+cin>>a;
+while(i<5)
+{
+  if(a==array[i])
+     {
+        ans=i;
+      cout<<"\nIndex of the given element is:";
+       
+       break;
+     }
+     i++;
+}
+     cout<<ans;
+ return 0;
+ }

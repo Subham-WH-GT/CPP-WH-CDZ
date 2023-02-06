@@ -1,0 +1,32 @@
+Q.(program to count total number of elements divisible by a specific number)?
+#include<iostream>
+using namespace std;
+bool number(int i,int &n)
+{
+   if(i%n==0)
+    return true;
+    
+    else
+    return false;
+   } 
+   
+int main()
+{
+   int a;
+   cout<<"Enter the number of elements:";
+   cin>>a;
+   int array[a];
+   for(int i=0;i<a;i++){
+   cin>>array[i];
+   }
+   int n,ans=0;
+   cout<<"\nEnter the value of n\n";
+   cin>>n;
+   for(int i=0;i<a;i++){
+     if(number(array[i],n)){
+       ans++;
+       }
+    }
+    cout<<ans<<endl;
+    return 0;
+    }

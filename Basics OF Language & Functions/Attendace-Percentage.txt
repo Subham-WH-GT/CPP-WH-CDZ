@@ -1,0 +1,21 @@
+#include<iostream>                          calculating_attendance_perct
+using namespace std;
+int main()
+{
+    int workingdays,attendingdays;
+    float percentage;
+    cout<<"Enter the total working days:";
+    cin>>workingdays;
+    cout<<"Enter the number of days attended by a candidate:\n";
+    cin>>attendingdays;
+    percentage=(attendingdays*100)/workingdays;
+    cout<<"percentage is:"<<percentage;
+    if(percentage>=75)
+    {
+        cout<<"\nThe candidate is eligible to appear in semester.";
+    }
+    else{
+        cout<<"\nThe candidate is not eligible to appear in semester.\nBETTER LUCK NEXT TIME.";
+    }
+    return 0;
+}

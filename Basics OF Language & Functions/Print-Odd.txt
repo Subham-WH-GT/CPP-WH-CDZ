@@ -1,0 +1,29 @@
+Q.(To input two numbers and print all the odd numbers between them)?
+#include<iostream>
+using namespace std;
+bool bringodd(int a)
+  {
+  
+  if(a%2!=0)
+  {
+    return true;
+
+  }
+  else{
+      return false;
+}
+}
+int main()
+{
+int a,b;
+cout<<"Enter two number:";
+cin>>a>>b;
+for(int i=a;i<=b;i++)
+{
+   if(bringodd(i))
+   {
+      cout<<i;
+   }
+   }
+   return 0;
+   }

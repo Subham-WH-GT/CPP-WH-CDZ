@@ -1,0 +1,21 @@
+Q.(Program to print short of every name)?
+/* ex- Netaji Subhas Chandra Bose
+    o/p- N.S.C.B */
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+string a,b;
+cout<<"Enter your string:";
+getline(cin,a);
+b.push_back(a[0]);
+for(int i=0;i<a.length();i++){
+   if(a[i]==' '){
+     b.push_back('.');
+     b.push_back(a[i+1]);
+     }
+    }
+ cout<<b<<endl;
+ return 0;
+ }

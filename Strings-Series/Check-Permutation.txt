@@ -1,0 +1,57 @@
+Q.(Program to input two string and if any permutation of string2 is present in string1 return true,else return false)?
+/* example  str1-subham
+                       str2-bha
+                      output-true
+                permutation: ex--rony(4!=24)
+                                               ans-rony,rnoy,ryon,rnyo,royn,ryno,yron,yorn,ynro,yrno,yonr,
+                                               ynor,orny,onry,oyrn,oryn,onyr,oynr,noyr,nyor,nryo,nyro,nroy,nory. */          
+#include<iostream>
+#include<cstring>
+using namespace std;
+bool check(int a[], int b[]){
+for(int i=0;i<26;i++){
+  if(a[i] != b[i]){
+       return false; 
+    }
+   
+  } 
+  return true;
+  }   
+int main()
+{
+string a,b;
+cout<<"Enter first string:\n";
+getline(cin,a);
+cout<<"Enter second string:\n";
+getline(cin,b);
+int c[26]={0},d[26]={0};
+/* first we have created an alphabet array to store the 
+frequency of alphabets in string2*/
+for(int i=0;i<b.length();i++){
+c[b[i]-'a']++;
+}
+int i=0,windowsize=b.length();
+/we started a window loop from 1 and traversed till windowsize in the string1/
+while(i<windowsize and i<a.length()){
+   d[a[i]-'a']++;
+   i++;
+  } 
+if(check(c,d)){
+  cout<<"True!";
+  return 0;
+  }
+ /*  we traversed the string1 from an index greater than window size,in order to 
+ maintain the size of window--we remove the memory of left and add the memory of right*/
+ while(i<a.length()){
+  d[a[i]-'a']++;
+  d[a[i-windowsize]-'a']--; 
+  /* for every iteration we ll check whether the window array is equal to alphabet array*/
+  if(check(c,d)){
+  cout<<"True!";
+  return 0;
+  }
+ i++;
+ }
+cout<<"False!";
+return 0;
+}

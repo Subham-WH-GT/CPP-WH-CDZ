@@ -1,0 +1,39 @@
+Q(Program to reverse your string)
+#include<iostream>
+using namespace std;
+int length(char array[]){
+  int sum=0;
+  for(int i=0;array[i]!='\0';i++){
+    sum++;
+    }
+    return sum;
+   } 
+  void reverse(char array[],int &b) {
+    int lp=0,rp=b-1;
+    while(lp<=rp){
+    swap(array[lp],array[rp]);
+    lp++;
+    rp--;
+    }
+   } 
+int main()
+{
+int a;
+cout<<"Enter the length of the string\n";
+cin>>a;
+char array[a];
+cin>>array;
+cout<<"Your entered string is:\n";
+cout<<array;
+int c;
+cout<<"\nEnter the index of null\n";
+cin>>c;
+array[c]='\0';
+int b;
+b=length(array);
+cout<<"\nLength="<<length(array);
+reverse(array,b);
+cout<<"\nReverse="<<array;
+cout<<endl;
+return 0;
+}

@@ -1,0 +1,29 @@
+Q.(To return p^q using recursion..optimised solution)?
+#include<iostream>
+using namespace std;
+int power(int a,int b){
+if(b==0)
+return 1;
+
+if(b%2==0){
+ int answer=power(a,b/2);
+  return answer*answer;
+  }
+else{
+int answer=power(a,(b-1)/2);
+return a*answer*answer;
+}
+}  
+int main()
+{
+int a,b;
+cout<<"Enter any number:";
+cin>>a;
+cout<<"Enter the value of power:";
+cin>>b;
+cout<<"Answer="<<power(a,b)<<endl;
+return 0;
+}
+/*   time comp=O(log b)
+       space comp=O(log b)
+       PW lecture 28;

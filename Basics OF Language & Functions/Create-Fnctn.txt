@@ -1,0 +1,29 @@
+Q.(To input age of a person and create a function to check he\she is eligible or not)?
+#include<iostream>
+using namespace std;
+bool eligibility(int a,int b)
+{
+   if(a>=b)
+   {
+   return true;
+   }
+   else{
+   return false;
+   }
+} 
+int main()
+{
+int age,limit;
+cout<<"Enter the age of the person\nEnter the limit of the nation";
+cin>>age>>limit;
+int eligible=eligibility(age,limit);
+if(eligible)
+{
+cout<<"Yes !";
+}
+else
+{
+cout<<"No !";
+}
+return 0;
+}

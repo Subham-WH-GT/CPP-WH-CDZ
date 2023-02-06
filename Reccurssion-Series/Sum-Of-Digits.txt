@@ -1,0 +1,20 @@
+//Q.(Program to return sum of the digits of a number using recursion)?
+#include<iostream>
+using namespace std;
+int sum(int x){
+if(x>-1 and x<10)
+return x;
+else{
+   return sum(x/10)+(x%10);
+   }
+  } 
+int main()
+{
+int a;
+cout<<"Enter any number:";
+cin>>a;
+cout<<sum(a)<<endl;
+return 0;
+}
+/* Time comp-O(d)__d=number of digits;
+    space comp-O(d)

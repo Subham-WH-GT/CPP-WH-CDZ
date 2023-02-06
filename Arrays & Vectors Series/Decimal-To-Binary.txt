@@ -1,0 +1,36 @@
+Q.(Program to convert decimal number to binary number)?
+#include<iostream>
+using namespace std;
+void reverse(int array[],int &a){
+  int lp=0,rp=a-1;
+  while(lp<=rp){
+    swap(array[lp],array[rp]);
+    lp++;
+    rp--;
+    }  
+   } 
+int main()
+{
+int array[4],a;
+cout<<"Enter any number:";
+cin>>a;
+int r,j=4;
+for(int i=0;i<4;i++){
+  r=a%2;
+   array[i]=r;
+   a=a/2;
+   }
+   cout<<"your array:";
+   for(int i=0;i<4;i++){
+ cout<<array[i]<<" ";
+ } 
+ 
+   reverse(array,j);
+ cout<<"\nBinary of given number is:\n";
+ 
+ for(int i=0;i<4;i++){
+ cout<<array[i]<<" ";
+ }
+ cout<<endl;
+ return 0;
+ }

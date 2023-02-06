@@ -1,0 +1,19 @@
+#include<iostream>                 shop_discount_pblm (qstn in sheet)
+using namespace std;
+int main()
+{
+    int quantity,price;
+    cout<<"Enter the quantity(each costs 100):";
+    cin>>quantity;
+    price=quantity*100;
+    if(price>1000)
+    {
+        cout<<"The total price is:"<<price-(price*0.1);
+    }
+    else
+    {
+        cout<<"The price is:"<<price;
+    }
+    return 0;
+    
+}

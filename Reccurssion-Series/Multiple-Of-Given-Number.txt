@@ -1,0 +1,22 @@
+Q.(Program to input to numbers num and k and print k multiples of num USING RECURSION)?
+/*  num=2;k=5
+    o/p--2 4 6 8 10. */
+#include<iostream>
+using namespace std;
+void multiples(int a,int b){
+ if(b<1){
+     return;
+    }
+  multiples(a,b-1);
+  cout<<a*b;
+  }   
+int main(){
+int num,a;
+cout<<"Enter the number: ";
+cin>>num;
+cout<<"Enter the number of multiples: ";
+cin>>a;
+multiples(num,a);
+cout<<endl;
+return 0;
+}

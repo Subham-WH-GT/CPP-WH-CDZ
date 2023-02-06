@@ -1,0 +1,21 @@
+Q.(Basic program to learn the use of string/char array)
+#include<iostream>
+using namespace std;
+int main()
+{
+cout<<"Input name:\n";
+char array[20];
+/*cin ends for string when you give space,tab,linebreak
+ex:  input subhamsaha
+        output-subhamsaha
+        
+        input-subham saha
+        output-subham
+        
+          input-subham \n saha
+          output-subham*/  
+cin>>array;
+cout<<"Displaying your name:\n"<<array;
+cout<<endl;
+return 0;
+}

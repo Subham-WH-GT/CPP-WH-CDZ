@@ -1,0 +1,17 @@
+#include<iostream>  programme_to_swap_given_numbers
+using namespace std;
+int main()
+{
+int a,b,c;
+cout<<"a=";
+cin>>a;
+cout<<"b=";
+cin>>b;
+c=a;
+a=b;
+b=c;
+cout<<"\nAFTER SWAPING:";
+cout<<"\na="<<a;
+cout<<"\nb="<<b;
+return 0;
+}

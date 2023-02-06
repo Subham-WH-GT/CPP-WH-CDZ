@@ -1,0 +1,20 @@
+Q.(Program to swap two numbers by using the concept of pointers)?
+#include<iostream>
+using namespace std;
+void swap(int *a,int *b){
+ int temp=*a;
+ *a=*b;
+ *b=temp;
+ }
+int main()
+{
+int a,b;
+cout<<"Enter the  value of x and y:";
+cin>>a>>b;
+int *p1=&a;
+int *p2=&b;
+cout<<"Before swap\nx="<<a<<endl<<"y="<<b<<endl;
+swap(p1,p2);
+cout<<endl<<"After swap\nvalue of x is:"<<a<<endl<<"value of y is:"<<b<<endl;
+return 0;
+}

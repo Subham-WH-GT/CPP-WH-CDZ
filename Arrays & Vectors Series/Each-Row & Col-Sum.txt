@@ -1,0 +1,40 @@
+Q.(Program to print sum of each rows and columns in 2D array)?
+#include<iostream>
+using namespace std;
+int main()
+{
+int a,b;
+cout<<"Enter total rows: ";
+cin>>a;
+cout<<"Enter total column:";
+cin>>b;
+int array[a][b];
+for(int i=0;i<a;i++){
+  for(int j=0;j<b;j++){
+    cin>>array[i][j];
+    }
+   }
+   cout<<"Your array is:\n";
+    for(int i=0;i<a;i++){
+  for(int j=0;j<b;j++){
+    cout<<array[i][j];
+    }
+    cout<<endl;
+   }
+for(int i=0;i<a;i++){
+int rowsum=0;
+for(int j=0;j<b;j++){
+rowsum+=array[i][j];
+}
+cout<<"Sum of "<<i<<" row is: "<<rowsum<<endl;
+}
+for(int i=0;i<b;i++){
+int colsum=0;
+for(int j=0;j<a;j++){
+colsum+=array[j][i];
+}
+cout<<"Sum of "<<i<<" col is: "<<colsum<<endl;
+}
+cout<<endl;
+return 0;
+}

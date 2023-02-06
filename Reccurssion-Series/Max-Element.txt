@@ -1,0 +1,16 @@
+Q.(Program to print max element in an array using recursion)?
+#include<iostream>
+using namespace std;
+int maxi(int *array,int i,int l){
+if(i==l-1){
+  return array[i];
+  }
+ return max(array[i],maxi(array,i+1,l));
+ } 
+int main()
+{
+int array[]={-17,-3,-19,-100,-6};
+cout<<"max element is:"<<maxi(array,0,5);
+cout<<endl;
+return 0;
+}

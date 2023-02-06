@@ -1,0 +1,35 @@
+Q.(Enter number of queries you want to know the existance of an element in an array and also print the frequency of the query element)?
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+    int n;
+    cout<<"Enter the number of elements your array ll contain:";
+    cin>>n;
+    cout<<n<<"\nElements of the vector are:";
+    vector<int>vec(n);
+    for(int i=0;i<n;i++)
+    {
+        cin>>vec[i];
+    }
+    const int N=1e5 + 10;
+    vector<int>vec2(N,0);
+    for(int i=0;i<n;i++)
+    {
+        vec2[vec[i]]++;
+    }
+    int q;
+    cout<<"\nEnter the number of queries:";
+    cin>>q;
+    while(q--)
+    {
+        int e;
+        {
+            cout<<"\nEnter your element:";
+            cin>>e;
+            cout<<"\nFrequency="<<vec2[e];
+        }
+    }
+    return 0;
+}

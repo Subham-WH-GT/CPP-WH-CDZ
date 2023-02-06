@@ -1,0 +1,63 @@
+Q.(Using 2D array input 2 matrices and print the multiplication of the matrices in the third matrix)?
+#include<iostream>
+using namespace std;
+int main()
+{
+  int r1,c1;
+  cout<<"Enter no. of rows of first matrix";
+  cin>>r1;
+  cout<<"Enter no. of columns of first matrix";
+  cin>>c1;
+  int matrix1[r1][c1];
+  for(int i=0;i<r1;i++){
+      for(int j=0;j<c1;j++){
+        cin>>matrix1[i][j];
+        }
+       }
+       cout<<"\nYour first matrix is:\n";
+       for(int i=0;i<r1;i++){
+      for(int j=0;j<c1;j++){
+        cout<<matrix1[i][j]<<" ";
+        }
+        cout<<endl;
+       }
+     int r2,c2;
+     cout<<"Enter no. of rows of  second matrix";
+     cin>>r2;  
+     cout<<"Enter no. of columns of  second matrix";
+     cin>>c2;
+     int matrix2[r2][c2];
+     for(int i=0;i<r2;i++){
+       for(int j=0;j<c2;j++){
+         cin>>matrix2[i][j];
+         }
+       }
+       cout<<"\nYour second matrix is:\n";
+       for(int i=0;i<r2;i++){
+       for(int j=0;j<c2;j++){
+         cout<<matrix2[i][j]<<" ";
+         }
+         cout<<endl;
+       }
+    if(c1!=r2){
+     cout<<"Invalid matrices !";
+     }
+    int matrix3[r1][c2];
+    for(int i=0;i<r1;i++){
+       for(int j=0;j<c2;j++){
+       int sum=0;
+         for(int k=0;k<r2;k++){
+              sum=sum+matrix1[i][k]*matrix2[k][j];
+              matrix3[i][j]=sum;
+              }
+             }
+            }
+            cout<<"\n Answer matrix is:\n";
+       for(int i=0;i<r1;i++){
+          for(int j=0;j<c2;j++){
+            cout<<matrix3[i][j]<<" ";
+            }
+            cout<<endl;
+            }                
+         return 0;
+         }

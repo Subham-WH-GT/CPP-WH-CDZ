@@ -1,0 +1,81 @@
+Q.( To input an element of the array and print out the near small and near great w.r.t that element)?
+#include<iostream>
+using namespace std;
+void sortarray(int
+{
+   for(int i=0;i<a;i++)
+   {
+      for(int j=i+1;j<a;j++)
+      {
+         if(array[i]>array[j])
+         {
+            int temp;
+            temp=array[i];
+            array[i]=array[j];
+            array[j]=temp;
+            }
+         }
+      }
+ } 
+ void ansarray(int array[],int a)
+ {
+   int c;
+  cout<<"Enter the element:";
+  cin>>c;
+   int leftpoint=0,rightpoint=(a-1);
+   while(leftpoint<=rightpoint)
+   {
+      if((array[leftpoint]==c) && (leftpoint!=0))
+         {
+           cout<<"Near Great="<<array[leftpoint+1];
+           cout<<"\nNear small="<<array[leftpoint-1]<<endl;
+           break;
+         }
+        if((array[leftpoint]==c) && (leftpoint==0))
+                   {
+                   cout<<"Near Great="<<array[leftpoint+1];
+           cout<<"\nNear small=Not Avail !"<<endl;
+            break;
+              
+                 }
+                
+                       
+        
+         
+  if((array[rightpoint]==c) && (rightpoint==a-1))
+      {
+           
+                
+                     cout<<"Near Great not Avail !";
+                     cout<<"Near small="<<array[rightpoint-1]<<endl;
+                     break;
+               }
+               
+ if((array[rightpoint]==c) && (rightpoint != a-1))
+           
+           {
+               cout<<"Near Great="<<array[rightpoint+1];
+                     cout<<"Near small="<<array[rightpoint-1]<<endl;
+                     break;
+            }          
+        leftpoint++;
+        rightpoint--;
+      }   
+}          
+int main()
+{
+ cout<<"Enter the number of element=";
+ int a;
+ cin>>a;
+ int array[a];
+ cout<<"\nElements of the array are:";
+ for(int i=0;i<a;i++)
+ {
+    cin>>array[i];
+  }
+  sortarray(array,a);
+  
+  ansarray(array,a);
+  
+   return 0;
+   }

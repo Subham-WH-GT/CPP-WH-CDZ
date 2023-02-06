@@ -1,0 +1,20 @@
+#include<iostream>                      employe_salary_pblm
+using namespace std;
+int main()
+{
+    int years,salary;
+    cout<<"Enter your year/s of experience:\n";
+    cin>>years;
+    cout<<"Enter your salary:";
+    cin>>salary;
+    if(years>=5)
+    {
+        cout<<"The net salary with bonus:"<<salary+(salary*0.05);
+    }
+    else
+    {
+    cout<<"The salary is"<<salary;
+    }
+    return 0;
+    
+}

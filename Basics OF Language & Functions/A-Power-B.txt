@@ -1,0 +1,15 @@
+#include<iostream>  (to input two numbers a and b and then find a raise to b?)
+
+using namespace std;
+int main()
+{
+  int a,b,result=1;
+  cout<<"Enter the value of a and b resp.";
+  cin>>a>>b;
+  for(int i=1;i<=b;i++)
+  {
+  result=result*a;
+  }
+  cout<<"result= "<<result;
+  return 0;
+}

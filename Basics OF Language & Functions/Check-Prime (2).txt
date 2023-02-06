@@ -1,0 +1,34 @@
+Q.( Input two numbers a and b and write a function to print only the prime numbers betwee them)?
+#include<iostream>
+using namespace std;
+bool checkprime(int a)
+{
+   int factor=0;
+   for(int i=1;i<=a;i++)
+   {
+     if(a%i==0){
+     factor++;
+     }
+     }
+ if(factor==2){
+ return true;
+ }
+ else {
+ return false;
+ }
+ }      
+int main()
+{
+   int a,b;
+   cout<<"Enter any two number:\n";
+   cin>>a>>b;
+   for(int i=a;i<=b;i++)
+   {
+     if(checkprime(i))
+     {
+     cout<<i<<" ";
+     }
+    }
+    cout<<endl;
+    return 0;
+    }

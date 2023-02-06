@@ -1,0 +1,59 @@
+Q.(To create simple calculator using functions)?
+#include<iostream>
+using namespace std;
+int add(int a,int b)
+{     
+        int sum=a+b;
+        return sum;
+ }
+ int mul(int a,int b)
+ {
+ int product=a*b;
+ return product;
+ }
+ float division(float a,float b)
+ {
+ float ans=a/b;
+ return ans;
+ }
+ int sub(int a,int b)
+ {
+ int result=a-b;
+ return result;
+ }
+        
+   
+int main()
+{ 
+          int c,d;
+          char opp;
+      cout<<"Enter two number=";
+      cin>>c>>d;
+      cout<<"\nEnter your operator=";
+      cin>>opp;
+      switch(opp)
+      {
+          case '+':
+          
+            cout<<"Result="<<add(c,d);
+            break;
+            
+            case '-':
+            
+            cout<<"Result="<<sub(c,d);
+            break;
+            
+            case'*':
+            
+            cout<<"Result="<<mul(c,d);
+            break;
+            
+            case '/':
+            
+            cout<<"Result="<<division(c,d);
+            break;
+            default:
+            cout<<"Invalid operator!";
+       }
+       return 0;
+ }

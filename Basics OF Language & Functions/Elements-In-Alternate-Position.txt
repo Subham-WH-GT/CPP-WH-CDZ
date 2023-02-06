@@ -1,0 +1,21 @@
+Q.(program to print the digits in every alternate position)?
+#include<iostream>
+using namespace std;
+int main()
+{
+  long long int a;
+  cout<<"Enter any number=";
+  cin>>a;
+  int rev=0;
+  while(a>0){
+  rev=(rev*10)+(a%10);
+  a=a/10;
+  }
+  int r;
+while(rev>0){
+ r=rev%10;
+ cout<<r;
+ rev=rev/100;
+ }
+return 0;
+}

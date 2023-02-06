@@ -1,0 +1,37 @@
+Q.(Prograam to print number is armstrong or not using recursion)?
+#include<iostream>
+#include<cmath>
+using namespace std;
+int arm(int a,int b){
+int sum;
+if(a==0 || a==1){
+return a;
+}
+int last=a%10;
+a=a/10;
+sum=pow(last,b)+arm(a,b);
+/*if(sum==c){
+cout<<"It's an armstrong number!";*/
+return sum;
+//}
+//cout<<"Not an armstrong number!";
+//return;
+}
+int main(){
+int a;
+cout<<"Enter any number: ";
+cin>>a;
+int b=a,digit=0;
+while(b>0){
+digit++;
+b=b/10;
+}
+if(arm(a,digit)==a){
+cout<<"Armstrong Number!";
+}
+else{
+cout<<"Not armsrtong number!";
+}
+cout<<endl;
+return 0;
+}

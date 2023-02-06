@@ -1,0 +1,52 @@
+Q.(To sort an array containing 1 and 0 using two pointers)?
+#include<iostream>
+#include<vector>
+using namespace std;
+void SortArray(vector<int> &vec)
+{
+    //101101
+    int leftpoint=0,rightpoint=((vec.size())-1);
+    while(leftpoint<rightpoint)
+    {
+        if(vec[leftpoint]==1 && vec[rightpoint]==0)
+        {
+            vec[leftpoint++]=0;
+            vec[rightpoint--]=1;
+        }
+         if(vec[leftpoint]==0 && vec[rightpoint]==0)
+        {
+            leftpoint++;
+        }
+         if(vec[leftpoint]==1 && vec[rightpoint]==1)
+        {
+            rightpoint--;
+        }
+         if(vec[leftpoint]==0 && vec[rightpoint]==1)
+        {
+            rightpoint--;
+            leftpoint++;
+        }
+    }
+    
+}
+int main()
+{
+    int a;
+    cout<<"Enter size of the array.";
+    cin>>a;
+    vector<int>vec;
+    for(int i=0;i<a;i++)
+    {
+        int ele;
+        cin>>ele;
+        vec.push_back(ele);
+    }
+    SortArray(vec);
+    cout<<"Sorted vector is:\n";
+    for(int i=0;i<a;i++)
+    {
+        cout<<vec[i];
+    }
+    return 0;
+    
+}

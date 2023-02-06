@@ -1,0 +1,38 @@
+Q.(Program to print the transpose of the given matrix using 2D)?
+#include<iostream>
+using namespace std;
+int main()
+{
+ int a,b;
+ cout<<"Enter the no. of rows of your matrix: ";
+ cin>>a;
+ cout<<"Enter the no. of columns of your matrix: ";
+ cin>>b;
+ int matrix[a][b];
+ for(int i=0;i<a;i++){
+   for(int j=0;j<b;j++){
+    cin>>matrix[i][j];
+    }
+   }
+   cout<<"Your entered matrix is:\n";
+    for(int i=0;i<a;i++){
+   for(int j=0;j<b;j++){
+    cout<<matrix[i][j]<<" ";
+    }
+    cout<<endl;
+   }
+   int trans[b][a];
+   for(int i=0;i<b;i++){
+     for(int j=0;j<a;j++){
+        trans[i][j]=matrix[j][i];
+        }
+       }
+       cout<<"\nThe transpose of the given matrix is:\n";
+           for(int i=0;i<b;i++){
+     for(int j=0;j<a;j++){
+        cout<<trans[i][j]<<" ";
+        }
+        cout<<endl;
+       }
+     return 0;
+     }

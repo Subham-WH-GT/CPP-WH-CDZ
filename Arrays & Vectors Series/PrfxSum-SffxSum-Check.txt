@@ -1,0 +1,42 @@
+Q.(check if we can partition the array into two subarrays with equal sum./ check that the prefix sum of a part of the array is equal to the suffix sum of rest of the array)?
+#include<iostream>
+#include<vector>
+using namespace std;
+bool ansarray(vector<int>&vec)
+{
+    int totalsum=0;
+    for(int i=0;i<vec.size();i++)
+    {
+        totalsum=totalsum+vec[i];
+    }
+    int prefixsum=0,suffixsum;
+    for(int i=0;i<vec.size();i++)
+    {
+        prefixsum+=vec[i];
+        suffixsum=totalsum-prefixsum;
+        if(prefixsum==suffixsum)
+        {
+            return true;
+        }
+        
+    }
+    return false;
+    
+    
+}
+int main()
+{
+    cout<<"Enter the number of elements:";
+    int a;
+    cin>>a;
+    vector<int>vec;
+    for(int i=0;i<a;i++)
+    {
+        int ele;
+        cin>>ele;
+        vec.push_back(ele);
+    }
+    cout<<ansarray(vec);
+    
+    return 0;
+}

@@ -1,0 +1,64 @@
+Q.(Program to print elements of a 2D array in spiral way)?
+/* example: 1  2  3   4
+                      5  6   7   8
+                      9 10 11 12
+                      
+                   output:1 2 3 4 8 12 11 10 9 5 6 7 */     
+#include<iostream>
+#include<vector>
+using namespace std;
+void spiral(vector<vector<int>>&v)
+{
+    int direction=0,top=0,bottom=v.size()-1,left=0,right=v[0].size()-1;
+   while(top<=bottom && left<=right){
+      if(direction==0){
+         for(int col=left;col<=right;col++){
+            cout<<v[top][col];
+            }
+            top++;
+           } 
+           if(direction==1){
+         for(int row=top;row<=bottom;row++){
+            cout<<v[row][right];
+            }
+            right--;
+           }
+           if(direction==2){
+         for(int col=right;col>=left;col--){
+            cout<<v[bottom][col];
+            }
+            bottom--;
+           }
+           if(direction==3){
+         for(int row=bottom;row>=top;row--){
+            cout<<v[row][left];
+            }
+            left++;
+           }
+         direction=(direction+1)%4;  
+       }
+      }        
+int main()
+{
+  int a,b;
+  cout<<"Enter the no. of row:\n";
+  cin>>a;
+  cout<<"Enter the no. of columns:\n";
+  cin>>b;
+  vector<vector<int>>vec(a,vector<int>(b));
+  for(int i=0;i<a;i++){
+     for(int j=0;j<b;j++){
+        cin>>vec[i][j];
+        }
+       }
+cout<<"Your entered matrix is:\n";
+  for(int i=0;i<a;i++){
+     for(int j=0;j<b;j++){
+        cout<<vec[i][j];
+        }
+        cout<<endl;
+       }
+   spiral(vec);
+   cout<<endl;
+   return 0;
+  }

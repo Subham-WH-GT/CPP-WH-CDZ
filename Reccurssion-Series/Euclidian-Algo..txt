@@ -1,0 +1,24 @@
+Q.(program to find G.C.D using euclidian algorithm)?
+#include<iostream>
+using namespace std;
+void gcd(int a,int b){
+if(b==1){
+cout<<b;
+return;
+}
+int rem=a%b;
+if(rem==0){
+ cout<<b;
+ return;
+}
+gcd(b,rem);
+}
+int main(){
+int a,b;
+cout<<"Enter two number-\n";
+cin>>a>>b;
+cout<<"G.C.D of the given is: ";
+gcd( a,b);
+cout<<endl;
+return 0;
+}

@@ -1,0 +1,33 @@
+Q.(There are N stones,numbered 1,2,3,...N...There is a frog initially at stone 1.If i indicates the posion of stone the frog can jump either i+1 stone or i+2 stone to reach the N position.) find the minimum costing in reaching the last stone where cost is calculated as(a[i]-a[j]).
+  example-10 30 40 20
+  o/p-->     30
+#include<iostream>
+#include<cmath>
+#include<algorithm>
+using namespace std;
+int f(int *array,int n,int i){
+if(i==n-1){
+return 0;
+}
+if(i==n-2){
+return f(array,n,i+1)+abs(array[i]-array[i+1]);
+}
+return min(f(array,n,i+1)+abs(array[i]-array[i+1]),f(array,n,i+2)+abs(array[i]-array[i+2]));
+}
+int main(){
+int a;
+cout<<"Enter total number of Stones:";
+cin>>a;
+int array[a];
+cout<<"Enter costing of each stone:\n";
+for(int i=0;i<a;i++){
+cin>>array[i];
+}
+cout<<"Your entered prices are:\n";
+for(int i=0;i<a;i++){
+cout<<array[i]<<" ";
+}
+cout<<"\nMinimum pricing in reaching last stone from first is:"<<f(array,a,0);
+cout<<endl;
+return 0;
+}

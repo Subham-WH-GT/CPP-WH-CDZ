@@ -1,0 +1,24 @@
+(Q count the number of elements strictly greater than value x)?                                                                                                                                          #include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+    vector<int>vec(5);
+    for(int i=0;i<5;i++)
+    {                                                         
+        cin>>vec[i];
+    }
+    int a;
+    cout<<"Enter a value:";
+    cin>>a;
+    int greater=0;
+    for(int i=0;i<5;i++)
+    {
+        if(vec[i]>a)
+        {
+            greater++;
+        }
+    }
+    cout<<greater;
+    return 0;
+}

@@ -1,0 +1,24 @@
+Q( Programme to find the difference of sum of all the even and odd elements)?                                                                                                                                     #include<iostream>
+using namespace std;
+int main()
+{
+    int array[5];
+    for(int i=0;i<5;i++)
+    {
+        cin>>array[i];
+    }
+    int even=0,odd=0;
+    for(int i=0;i<5;i++)
+    {
+        if(array[i]%2==0)
+        {
+            even=even+array[i];
+        }
+        else
+        {
+          odd=odd+array[i];  
+        }
+    }
+    cout<<"Difference="<<(even-odd);
+    return 0;
+}

@@ -1,0 +1,59 @@
+Q.(Program to reverse elements of array)?
+#include<iostream>
+
+#include<vector>
+
+using namespace std;
+void reverse(vector<int>&vec)
+{
+    int leftpoint=0,rightpoint=vec.size()-1;
+    while((leftpoint) < (rightpoint))
+    {
+        int temp;
+        temp=vec[leftpoint];
+        vec[leftpoint]=vec[rightpoint];
+        vec[rightpoint]=temp;
+        leftpoint++;
+        rightpoint--;
+        
+    }
+}
+
+int main()
+
+{
+
+int a;
+
+cout<<"Enter the number of element:";
+
+cin>>a;
+
+vector<int>vec;
+
+for(int i=0;i<a;i++)
+
+{
+
+int ele;
+
+cin>>ele;
+
+vec.push_back(ele);
+
+}
+
+reverse(vec);
+
+for(int i=0;i<a;i++)
+
+{
+
+cout<<vec[i];
+
+}
+
+return 0;
+
+
+}

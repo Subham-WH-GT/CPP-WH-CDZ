@@ -1,0 +1,19 @@
+Q.(Program to print number from 1 to n using recursion)?
+#include<iostream>
+using namespace std;
+void natural(int a){
+   if(a<1){
+   return;
+   }
+  natural(a-1);
+  cout<<a<<" ";
+   }
+int main()
+{
+int a;
+cout<<"Enter a number: ";
+cin>>a;
+natural(a);
+cout<<endl;
+return 0;
+}

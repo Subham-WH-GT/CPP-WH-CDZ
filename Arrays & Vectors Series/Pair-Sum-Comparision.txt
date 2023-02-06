@@ -1,0 +1,26 @@
+Q.(Find total number of pairs in the array whose sum is equal to the given value x)?
+#include<iostream>
+using namespace std;
+int main(){
+    int array[5];
+    cout<<"Five elements of the array are:\n";
+    for(int i=0;i<5;i++)
+    {
+        cin>>array[i];
+    }
+    int sum,pairs=0;
+    cout<<"Enter the sum:";
+    cin>>sum;
+    for(int i=0;i<5;i++)
+    {
+        for(int j=(i+1);j<5;j++)
+        {
+          if(array[i]+array[j]==sum)
+          {
+              pairs++;
+          }
+        }
+    }
+    cout<<"Number of pairs="<<pairs;
+    return 0;
+}

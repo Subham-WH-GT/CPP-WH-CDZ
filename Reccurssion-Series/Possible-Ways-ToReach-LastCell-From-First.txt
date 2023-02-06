@@ -1,0 +1,25 @@
+Q.(Create a grid(array) and count the no. of ways possible to reach the last cell(r-1 and c-1)from the starting cell)?
+   CONSTRAIN:-you are allowed to move only the right cell or the bottom cell at a time.
+/* Example-
+                i/p-->r=3 and c=3
+                o/p=6;*/
+#include<iostream>
+using namespace std;
+int f(int i,int j,int r,int c){
+if(i==r or j==c ){
+return 0;
+}
+if(i==r-1 and j==c-1){
+return 1;
+}
+return f(i,j+1,r,c)+f(i+1,j,r,c);
+}
+int main(){
+int r,c;
+cout<<"Enter total no. of rows and columns:";
+cin>>r>>c;
+int i=0,j=0;
+cout<<"Total possible ways are:"<<f(i,j,r,c);
+cout<<endl;
+return 0;
+}

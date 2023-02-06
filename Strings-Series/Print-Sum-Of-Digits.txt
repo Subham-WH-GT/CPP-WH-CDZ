@@ -1,0 +1,24 @@
+Q.(Input a string containing both characters and numbers and print the sum of digits present in the string)?
+ex- subham2907
+     output-18
+#include<iostream>
+using namespace std;
+int main()
+{
+string s;
+getline(cin,s);
+int sum=0;
+for(int i=0;i<s.length();i++){
+
+  if(s[i]>=48 and s[i]<=57){
+  /* since the element(here digits) is stored in the form of character so 
+  if we simply add the element with sum
+  it will actually add the ascii value..hence we will have to substract the ascii value of 0 i.e 48 or '0' 
+   with s[i] */  
+              sum+=s[i]-'0';
+    }
+ }
+
+cout<<sum;
+return 0;
+}

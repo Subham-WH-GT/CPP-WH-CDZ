@@ -1,0 +1,15 @@
+Q.(Basic problem to know the code and execution of pointers)?
+/* the * can be written in multiple positions:
+  like-int* p
+           int * p*/
+#include<iostream>
+using namespace std;
+int main()
+{
+int a=10;
+int *p=&a;
+cout<<"Value of a is:"<<a;
+cout<<"Adress of a is: "<<p;
+cout<<endl;
+return 0;
+}

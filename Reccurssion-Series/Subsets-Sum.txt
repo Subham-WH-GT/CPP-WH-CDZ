@@ -1,0 +1,22 @@
+Q.(Program to print a vector consisting of sums of the subsets of a given array)?
+#include<iostream>
+#include<vector>
+using namespace std;
+void f(int *array,int i,int sum,int n,vector<int>&reach){
+if(i==n){
+reach.push_back(sum);
+return ;
+}
+f(array,i+1,sum+array[i],3,reach);
+f(array,i+1,sum,3,reach);
+}
+int main(){
+int array[]={1,2,3};
+vector<int>answer;
+f(array,0,0,3,answer);
+for(int i=0;i<answer.size();i++){
+cout<<answer[i]<<" ";
+}
+cout<<endl;
+return 0;
+}

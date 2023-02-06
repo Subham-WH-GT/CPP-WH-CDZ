@@ -1,0 +1,41 @@
+Q.(Program to find the most occured letter in a word)?
+#include<iostream>
+using namespace std;
+char MaxOcc(string &a){
+int array[26]={0};//this line indicates that all the 26 elements of the array is 0.
+for(int i=0;i<a.length();i++){
+/* here we are learning how to convert a alphabet into its corresponding index...
+       example-if alphabet is 's'
+        corresponding index is= 's' - 'a'
+                                                  =115 - 97
+                                                  =18
+        */
+    int index=a[i]-'a';
+    array[index]++;
+   }
+   int max=-1,ans=-1;
+   for(int i=0;i<26;i++){
+   
+     if(array[i]>max){
+       ans=i;
+       max=array[i];
+       }
+      }
+    return ans+'a';
+    /* in result we are learning how to convert index no. to corresponding alphabet
+    example-
+      index number=5
+      corresponding alphabet= 5+'a'
+                                                  =102
+                                                  =f
+   }    
+    
+int main()
+{
+string a;
+cout<<"Enter the word: ";
+cin>>a;
+cout<<"Maximum occured letter is: "<<MaxOcc(a);
+cout<<endl;
+return 0;
+}

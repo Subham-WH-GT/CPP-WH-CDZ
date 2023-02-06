@@ -1,0 +1,17 @@
+Q.(Program to print sum of the elements in an array using recursion...find tme and space comp)?
+#include<iostream>
+using namespace std;
+int sum(int *array,int i,int l){
+if(i==l-1){
+return array[i];
+}
+return array[i]+sum(array,i+1,l);
+}
+int main()
+{
+int array[]={2,4,0,1,-1};
+cout<<"Sum of the elements is:"<<sum(array,0,5)<<endl;
+return 0;
+}
+/* time comp=O(n)
+     space comp=O(n);

@@ -1,0 +1,37 @@
+Q.(Input an array of size n.answer q queries where you need to print the sum of values in a given range of indices from l and r(both included)...the array follow 1 based index)?
+#include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+    int a;
+    cout<<"Enter the number of elements:";
+    cin>>a;
+    vector<int>vec(a);
+    for(int i=1;i<=a;i++)
+    {
+        cin>>vec[i];
+    }
+    int q;
+    cout<<"Enter number of queries:";
+    cin>>q;
+    while(q--)
+    {
+       int l,r,prefixsum_r=0;
+       cout<<"Enter value of l and r\n";
+       cin>>l>>r;
+       for(int i=1;i<=r;i++)
+       {
+           prefixsum_r+=vec[i];
+       }
+       int prefixsum_l=0;
+       for(int i=1;i<l;i++)
+       {
+           prefixsum_l+=vec[i];
+       }
+       int ans=prefixsum_r-prefixsum_l;
+       cout<<ans<<endl;
+       
+    }
+    return 0;
+}

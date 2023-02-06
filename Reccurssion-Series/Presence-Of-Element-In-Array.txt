@@ -1,0 +1,29 @@
+Q.(Write a recurssive program to check whether a given number is present in the array or not)?
+#include<iostream>
+using namespace std;
+void f(int* array,int n,int  i,int x){
+//base
+if(i==n){ 
+cout<<"NO";
+// array is now exhausted...
+     return; 
+       
+    }
+ if(array[i]==x){
+    cout<<"YES";
+    return;
+    }
+  
+ f(array,n,i+1,x);
+ 
+  //return NO;
+  }        
+int main(){
+int array[]={1,2,3,4,5};
+int x;
+cout<<"Enter a number to search-";
+cin>>x;
+f(array,5,0,x);
+cout<<endl;
+return 0;
+}

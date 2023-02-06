@@ -1,0 +1,30 @@
+Q.(Program to find second string in the original string and then erase the second string in the original string)?
+  /* string1-subham
+      string2-bha
+      output-sum*/
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+string a,b;
+cout<<"Enter string a: ";
+getline(cin,a);
+cout<<"Enter string b: ";
+getline(cin,b);
+/* a.find() is a function in string which is used to find if a 
+word or string is present in the original string and 
+it returns the index of the first alphabet 
+example-string1-subham
+                  string2-bha
+                  cout<<string1.find(string2)
+                  output-2(Index of b)*/
+                  
+while(a.length()!=0 && a.find(b)<a.length()){
+   a.erase(a.find(b),b.length());
+   }
+  cout<<endl;
+  cout<<a;
+  cout<<endl;
+  return 0; 
+}

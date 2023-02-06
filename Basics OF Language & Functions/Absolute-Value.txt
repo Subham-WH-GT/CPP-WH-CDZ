@@ -1,0 +1,12 @@
+Q.(Program to find absolute value of a number using ternary operator)?
+#include<iostream>
+using namespace std;
+int main()
+{
+int a,absolute;
+cout<<"Enter any number:";
+cin>>a;
+absolute=(a>0)?a:-a;
+cout<<"\nThe absolute value is:"<<absolute;
+return 0;
+}

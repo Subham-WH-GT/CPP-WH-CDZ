@@ -1,0 +1,25 @@
+Q.(To print pascal's triangle using 2D array without using the concept of combination)?
+#include<iostream>
+using namespace std;
+int main()
+{
+int a;
+cin>>a;
+int array[a][a];
+for(int i=0;i<a;i++){
+   for(int j=0;j<=i;j++){
+      if((i==i && j==i) || (i==i && j==0)){
+       array[i][j]=1;
+       }        
+       else array[i][j]=array[i-1][j]+array[i-1][j-1];
+       }
+     }
+     cout<<"Your Pascal's Triangle Represnts :\n";
+       for(int i=0;i<a;i++){
+   for(int j=0;j<=i;j++){
+       cout<<array[i][j]<<" ";
+       }
+      cout<<endl;
+      }
+     return 0;
+     }

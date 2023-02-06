@@ -1,0 +1,51 @@
+Q.(program to rotate a square matrix by 90 degree using creating extra space in the original matrix)?
+#include<iostream>
+#include<algorithm>
+#include<vector>
+using namespace std;
+/* logic to rotate the matrix is that:first do transpose of the matrix and then reverse every row
+ ex-123
+      456
+      789
+      after trans:
+      147
+      258
+      369
+      after reverse:(to use pre-defined reverse function:we have to use #include<algorithm>)
+      741
+      852
+      963*/
+void rotate(vector<vector<int>>&vec,int &a)
+{
+   for(int i=0;i<a;i++){
+     for(int j=0;j<i;j++){
+     swap(vec[i][j],vec[j][i]);
+     }
+     }
+     for(int i=0;i<a;i++){
+     reverse(vec[i].begin(),vec[i].end());
+     }
+     }
+
+int main()
+{
+//since we will use a square matrix so we take only one input!
+  int a;
+  cout<<"Enter the number of rows and columns:";
+  cin>>a;
+  vector<vector<int>>vec(a,vector<int>(a));
+  for(int i=0;i<a;i++){
+    for(int j=0;j<a;j++){
+      cin>>vec[i][j];
+      }
+      }
+   rotate(vec,a);
+   for(int i=0;i<a;i++){
+     for(int j=0;j<a;j++){
+     cout<<vec[i][j];
+     }
+     cout<<endl;
+     }
+   cout<<endl;
+   return 0;
+   }

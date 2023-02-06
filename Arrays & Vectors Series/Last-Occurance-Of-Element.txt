@@ -1,0 +1,24 @@
+Q.( programme to find last occurance of an element in a vector)?                                                                                                                                                                                                                                 #include<iostream>
+#include<vector>
+using namespace std;
+int main()
+{
+    vector<int>vec(6);
+    for(int i=0;i<6;i++)
+    {
+        cin>>vec[i];
+    }
+    int x;
+    cout<<"\nEnter an element to know its last occurance:";
+    cin>>x;
+    int index=-1;
+    for(int i=0;i<6;i++)
+    {
+        if(vec[i]==x)
+        {
+            index=i;
+        }
+    }
+    cout<<index;
+    return 0;
+}

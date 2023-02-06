@@ -1,0 +1,21 @@
+#include<iostream>     programme_to_check_person_is_child_teen_or_adult
+using namespace std;
+int main()
+{
+int age;
+cout<<"Enter your age.";
+cin>>age;
+if(age<12)
+{
+cout<<"\nIts a child!";
+}
+else if(age>=12 && age<=1😎
+{
+cout<<"person is a teenager!";
+}
+else
+{
+cout<<"Person is an adult!";
+}
+return 0;
+}

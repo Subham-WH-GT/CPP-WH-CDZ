@@ -1,0 +1,34 @@
+Q.(Program to convert decimal number to hexa-decimal)?
+    /* example-
+               1021
+        o/p-3FD */ 
+#include<iostream>
+using namespace std;
+int main()
+{
+int a,r,i=0;
+char array[10];
+cout<<"Enter any number:";
+cin>>a;
+while(a>0){
+  r=a%16;
+  if(r>9){
+       r=55+r;
+     array[i]=r;
+      }
+  else{
+      r=48+r;
+    array[i]=r;
+    }
+    a=a/16;
+    i++;
+    }
+   i=i-1;
+   cout<<"Hexadecimal form is:\n";
+   while(i>=0){
+   cout<<array[i];
+   i--;
+   }
+  cout<<endl;
+  return 0;
+  }

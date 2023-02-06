@@ -1,0 +1,69 @@
+Q.(Program to find two's complement of given input number)?
+#include<iostream>
+using namespace std;
+void reverse(int array[],int &a){
+  int lp=0,rp=a-1;
+  while(lp<=rp){
+    swap(array[lp],array[rp]);
+    lp++;
+    rp--;
+    }  
+   } 
+int main()
+{
+int array[4],array2[4],array3[4],a;
+cout<<"Enter any number:";
+cin>>a;
+int r,j=4;
+for(int i=0;i<4;i++){
+  r=a%2;
+   array[i]=r;
+   a=a/2;
+   }
+   cout<<"your array:";
+   for(int i=0;i<4;i++){
+ cout<<array[i]<<" ";
+ } 
+ 
+   reverse(array,j);
+ cout<<"\nBinary of given number is:\n";
+ 
+ for(int i=0;i<4;i++){
+ cout<<array[i]<<" ";
+ }
+ for(int i=0;i<4;i++){
+  if(array[i]==0){
+        array2[i]=1;
+      }
+     else{
+     array2[i]=0;
+    }
+   }
+  cout<<"\n1's complement of the given number is:\n"; 
+  for(int i=0;i<4;i++){
+ cout<<array2[i]<<" ";
+ }  
+ cout<<endl;
+ int carry=1;
+ for(int i=3;i>=0;i--){ 
+    
+   if(array2[i]==1 and carry==1){
+      array3[i]=0;
+      carry=1;
+      }
+    else if(array2[i]==0 and carry==1){
+     array3[i]=1;
+     carry=0;
+     }
+    else {
+      array3[i]=array2[i];
+     }
+    }
+   cout<<"2's complement is:\n";
+   for(int i=0;i<4;i++){
+   cout<<array3[i];
+   }
+   cout<<endl;
+         
+ return 0;
+ }

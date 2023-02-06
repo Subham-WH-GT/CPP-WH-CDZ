@@ -1,0 +1,57 @@
+Q.(program to move all the even elements on the left side and odd elements on the right side irrespective of order)?
+#include<iostream>
+#include<vector>
+using namespace std;
+void sortarray(vector<int>&vec)
+{
+    int leftpoint=0,rightpoint=vec.size()-1;
+    while(leftpoint<rightpoint)
+    {
+        if(vec[leftpoint]%2!=0&& vec[rightpoint]%2==0)
+        {
+            int c;
+            
+            c=vec[leftpoint];
+            vec[leftpoint]=vec[rightpoint];
+            vec[rightpoint]=c;
+            rightpoint--;
+            leftpoint++;
+            
+        }
+        if(vec[leftpoint]%2==0 && vec[rightpoint]%2==0)
+        {
+            leftpoint++;
+        }
+        if(vec[leftpoint]%2!=0 && vec[rightpoint]%2!=0)
+        {
+            rightpoint--;
+        }
+        if(vec[leftpoint]%2==0 && vec[rightpoint]%2!=0)
+        {
+            leftpoint++;
+            rightpoint--;
+        }
+        
+    }
+}
+int main()
+{
+    int a;
+    cin>>a;
+    cout<<"Enter the elements of your vector:";
+    vector<int>vec;
+    for(int i=0;i<a;i++)
+    {
+        int ele;
+        cin>>ele;
+        vec.push_back(ele);
+    }
+    sortarray(vec);
+    cout<<"Sorted Array is:";
+    for(int i=0;i<a;i++)
+    {
+        cout<<vec[i];
+    }
+    return 0;
+    
+}

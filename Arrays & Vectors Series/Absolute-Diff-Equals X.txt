@@ -1,0 +1,43 @@
+Q.(input a vector sorted in increasing order of n size and input an inter x, find if there exist any pair in the array whose abs.diff.is exactly x.)?
+/* if  exist print-yes
+   if doesnot exist print-no
+   Without using bruteforce method!*/
+#include<iostream>
+#include<vector>
+#include<cmath>
+using namespace std;
+int main()
+{
+  int a,b;
+  cout<<"Enter the total elements in array:\n";
+  cin>>a;
+  vector<int>vec(a);
+  for(int i=0;i<a;i++){
+     cin>>vec[i];
+     }
+     cout<<"Input number:\n";
+     cin>>b;
+     int lp=0,rp=1;
+     
+          bool pair=false;
+     while(lp<a and rp<a){
+     if(abs(vec[lp]-vec[rp])==b){
+       pair=true;
+       break;
+       }
+       else if(abs(vec[lp]-vec[rp])>b){
+          lp++;
+          }
+          else{
+           rp++;
+           }
+          }
+        if(pair==true){
+          cout<<"YES!";
+          }
+          else{
+          cout<<"NO!";
+          }
+       cout<<endl;
+       return 0;
+       }

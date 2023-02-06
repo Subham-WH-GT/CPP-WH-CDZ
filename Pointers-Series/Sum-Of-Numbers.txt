@@ -1,0 +1,15 @@
+Q.(Simple program to print sum of two numbers using pointers)?
+#include<iostream>
+using namespace std;
+int main()
+{
+int x,y;
+cin>>x>>y;
+int *pointx=&x, *pointy=&y;
+int result;
+int *pointr=&result;
+*pointr=*pointx+*pointy;
+cout<<"Result="<<result;
+cout<<endl;
+return 0;
+}

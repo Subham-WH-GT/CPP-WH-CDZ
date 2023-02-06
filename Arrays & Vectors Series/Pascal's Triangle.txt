@@ -1,0 +1,38 @@
+Q.(Program to print Pascal's Triangle using the concept of Combination)?
+#include<iostream>
+using namespace std;
+int factorial(int &a)
+{
+    int fact=1;
+   if(a>0){
+          for(int i=a;i>=1;i--){
+       fact=fact*i;
+       }
+      }
+    else{
+     fact=1;
+     }
+   return fact;
+   }     
+int main()
+{
+int a;
+cin>>a;
+
+int array[a][a];
+for(int i=0;i<a;i++){
+   for(int j=0;j<=i;j++){
+        int c;
+        c=i-j;
+       array[i][j]=(factorial(i))/(factorial(j)*factorial(c));
+       }
+     }
+     cout<<"Your Pascal's Triangle Represnts :\n";
+       for(int i=0;i<a;i++){
+   for(int j=0;j<=i;j++){
+       cout<<array[i][j]<<" ";
+       }
+      cout<<endl;
+      }
+     return 0;
+     }

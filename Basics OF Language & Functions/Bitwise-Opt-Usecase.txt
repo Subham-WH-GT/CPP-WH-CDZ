@@ -1,0 +1,19 @@
+Q. ( Program to check if a number is power of two or not using bitwise operator)?
+#include<iostream>
+using namespace std;
+int main()
+{
+ int a;
+ cout<<"Enter any number:";
+ cin>>a;
+ 
+ if((a & (a-1))==0)
+ {
+ cout<<"The number is power of 2.";
+ }
+ else
+ {
+ cout<<"The number is not power of 2.";
+ }
+ return 0;
+ }

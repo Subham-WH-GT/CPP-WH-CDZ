@@ -1,0 +1,33 @@
+Q.(Program to create 3 arrays and merge the first two arrays in the third arrays)?
+#include<iostream>
+using namespace std;
+int main()
+{
+int a,b;
+cout<<"Enter total elements of array1=\n";
+cin>>a;
+cout<<"Enter total elements of array2=\n";
+cin>>b;
+int array1[a],array2[b],array3[a+b];
+int j=0;
+cout<<"Elements of array1 are:";
+for(int i=0;i<a;i++)
+{
+   cin>>array1[i];
+   array3[j++]=array1[i];
+   }
+     cout<<"elements of array2 are:";
+  for(int i=0;i<b;i++)
+
+  {
+     cin>>array2[i];
+     array3[j++]=array2[i];
+     }
+   cout<<"Elements of array 3 are";  
+   for(int i=0;i<j;i++)
+     {
+        cout<<array3[i];
+        }
+     cout<<endl;
+     return 0;
+     }

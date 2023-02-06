@@ -1,0 +1,36 @@
+Q.(Program to check a string is palindrome or not)?
+#include<iostream>
+using namespace std;
+bool checkpali(char array[],int &a){
+  int lp=0,rp=a-1;
+  while(lp<=rp){
+    if(array[lp]!=array[rp]){
+    return false;
+    }
+   else{
+   lp++;
+   rp--;
+   }
+  }
+ return true;
+ }   
+int main()
+{
+ int a;
+ cout<<"Enter the length of string:\n";
+ cin>>a;
+ char array[a];
+ cin>>array;
+ int x;
+ cout<<"Enter the null index\n";
+ cin>>x;
+ array[x]='\0';
+ if(checkpali(array,x)){
+    cout<<"Palindrome!";
+    }
+  else{
+  cout<<"Not Palindrome!";
+  }
+  cout<<endl;
+  return 0;
+  }

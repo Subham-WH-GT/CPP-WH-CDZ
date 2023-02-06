@@ -1,0 +1,29 @@
+Q.(Program to print nth fibonacci term)?
+#include<iostream>
+using namespace std;
+int fibo(int a){
+if(a==1) 
+   return 0;
+else if(a==2)
+    return 1;
+else{
+  return fibo(a-1)+fibo(a-2);
+  }
+ }     
+int main()
+{
+int a;
+cout<<"Enter the ith fibo. term you want to know:";
+cin>>a;
+cout<<fibo(a);
+cout<<endl;
+return 0;
+}
+/*
+--->space complexity
+   for n=5
+    5 times the function is called(remember when the functn returns it erase the stack space)
+    hence for n=a,max 0f a space is taken without erasing any stack space...
+    hence space comp.=O(n);  
+  ---->time complexity
+    O(2^n)[video=27;PW]
