@@ -1,0 +1,45 @@
+Q.(Quick Sort Algorithm)?
+--> It follows Divide and conquer Rule...
+#include<iostream>
+using namespace std;
+int pivot(int array[],int first,int last){
+int pivot_element=array[last];
+int i=first-1;
+for(int j=first;j<last;j++){
+  if(array[j]<pivot_element){
+     i++;
+     swap(array[j],array[i]);
+     }
+    }
+    swap(array[i+1],array[last]);
+    return i+1;
+    } 
+void quickSort(int array[],int first,int last){
+if(first>=last){
+  return;
+  }
+ int pivot_idx=pivot(array,first,last);
+ quickSort(array,first,pivot_idx-1);
+ quickSort(array,pivot_idx+1,last);
+ } 
+int main(){
+int n;
+cout<<"Enter total size of the array:";
+cin>>n;
+int array[n];
+for(int i=0;i<n;i++){
+cin>>array[i];
+}
+cout<<"Your input array is: ";
+for(int i=0;i<n;i++){
+cout<<array[i]<<" ";
+}
+cout<<endl;
+quickSort(array,0,n-1);
+cout<<"Your sorted array is:\n";
+for(int i=0;i<n;i++){
+cout<<array[i]<<" ";
+}
+cout<<endl;
+return 0;
+}
