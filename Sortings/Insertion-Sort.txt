@@ -1,0 +1,71 @@
+Q.(Insertion sort Algorithm)?
+
+/* Intuition--Divide your unsorted array into two parts(first element as sorted part and rest elements as unsorted parts)
+
+                         and repeatedly place elements from unsorted part into sorted part in sorted manner...*/
+
+#include<iostream>
+
+using namespace std;
+
+void insertionSort(int array[],int l){
+
+for(int i=1;i<l;i++){
+
+int current_element=array[i];
+
+int j=i-1;
+
+for(;current_element<array[j] and j>=0;j--){
+
+ array[j+1]=array[j];
+
+   }
+
+   array[j+1]=current_element;
+
+ }
+
+}
+
+int main(){
+
+int n;
+
+cout<<"Enter total size of the array:";
+
+cin>>n;
+
+int array[n];
+
+cout<<"Enter elements of the array-";
+
+for(int i=0;i<n;i++){
+
+cin>>array[i];
+
+}
+
+cout<<"Your input array is-\n";
+
+for(int i=0;i<n;i++){
+
+cout<<array[i]<<" ";
+
+}
+
+insertionSort(array,n);
+
+cout<<"\nYour sorted array is-\n";
+
+for(int i=0;i<n;i++){
+
+cout<<array[i]<<" ";
+
+}
+
+cout<<endl;
+
+return 0;
+
+}
