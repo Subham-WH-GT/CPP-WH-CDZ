@@ -1,0 +1,72 @@
+Q.(Program to arrange string in lexicographical order)?
+
+    Algorithm-Bubble-Sort 
+
+#include<iostream>
+
+#include<cstring>
+
+using namespace std;
+
+void sortString(char str[][50],int n){
+
+for(int i=n-1;i>=0;i--){
+
+   int j=0;
+
+   bool flag=true;
+
+   while(j != i){
+
+   if(strcmp(str[j],str[j+1])>0){
+
+       char temp[10];
+
+       strcpy(temp,str[j]);
+
+       strcpy(str[j],str[j+1]);
+
+       strcpy(str[j+1],temp);
+
+       flag=false;
+
+      }
+
+        j++;
+
+     }
+
+   if(flag==true){
+
+        return; 
+
+       }  
+
+    } 
+
+   }  
+
+int main(){
+
+char str[5][50];
+
+for(int i=0;i<5;i++){
+
+cin>>str[i];
+
+}
+
+sortString(str,5);
+
+for(int i=0;i<5;i++){
+
+cout<<str[i]<<" ";
+
+}
+
+cout<<endl;
+
+return 0;
+
+}
+
