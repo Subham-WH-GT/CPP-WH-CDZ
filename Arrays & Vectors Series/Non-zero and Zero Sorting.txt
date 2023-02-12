@@ -1,0 +1,97 @@
+Q.(Program to move all the zeroes at the end without changing the relative order of non-zero elements)?
+
+constrain--you cannot copy or create extra array;
+
+example-- 
+
+                  i/p-1 3 0 2 0 4 
+
+                 o/p-1 3 2 4 0 0
+
+                  
+
+#include<iostream>
+
+using namespace std;
+
+void sort(int array[],int n){
+
+int j=n-1;
+
+for(int i=0;i<n;i++){
+
+   if(array[i]!=0){
+
+       continue;
+
+       }
+
+      else{
+
+        end--;
+
+        for(int k=i;k<n;k++){
+
+          if(array[k] != 0){
+
+             array[i]=array[k];
+
+             array[k]=0;
+
+             break;
+
+             }
+
+          else if(k==n-1 and array[k]==0){
+
+            return;
+
+            }
+
+           }
+
+          }
+
+         }
+
+        }        
+
+int main(){
+
+int n;
+
+cout<<"Enter total element of the array:";
+
+cin>>n;
+
+int array[n];
+
+for(int i=0;i<n;i++){
+
+  cin>>array[i];
+
+  }
+
+  cout<<"Your entered array is:\n";
+
+  for(int i=0;i<n;i++){
+
+  cout<<array[i]<<" ";
+
+  }
+
+ sort(array,n);
+
+ cout<<"\nYour sorted array is:\n"; 
+
+ for(int i=0;i<n;i++){
+
+  cout<<array[i]<<" ";
+
+  }
+
+  cout<<endl;
+
+  return 0;
+
+  }
