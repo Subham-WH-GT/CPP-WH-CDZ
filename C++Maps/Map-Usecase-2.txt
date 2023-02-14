@@ -1,0 +1,52 @@
+Q.(Usecase of map..query based)?
+/*--->enter total test cases
+        enter queries of the ongoing testcase
+        type a query-input key and input value for the key, push it to the map
+        type b query-print value of the key present in the map, if not present print -1
+        type c qyuey-print content of the entire map */
+#include<iostream>
+#include<map>
+using namespace std;
+void printmap(map<int,int>&m){
+  for(auto it=m.cbegin();it != m.cend(); it++){
+     cout<<it->first<<" "<<it->second<<" ";
+     }
+   }
+int main(){
+int tests,qnum,key,value;
+char qtype;
+map<int,int>m;
+cout<<"Enter total test-cases you want to perform-";
+cin>>tests;
+for(int i=1;i<=tests;i++){
+  cout<<"Enter total queries of the test-case-";
+  cin>>qnum;
+  for(int i=1;i<=qnum;i++){
+    cout<<"Enter query type-";
+     cin>>qtype;
+     if(qtype=='a'){
+        cout<<"Enter key:";
+        cin>>key;
+        cout<<"Enter value-";
+        cin>>value;
+        m[key]=m[key]+value;
+        }
+     else if(qtype=='b'){
+          cout<<"Enter key-";
+          cin>>key;
+          if(m.find(key) != m.end()){
+              cout<<m[key]<<endl;
+              }
+            else{
+                cout<<-1<<endl;
+                }
+               }
+           else if(qtype=='c'){
+                    printmap(m);
+                   }
+                  }
+                  m.clear();
+                 }
+               cout<<endl;
+               return 0;
+               }

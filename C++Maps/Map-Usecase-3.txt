@@ -1,0 +1,43 @@
+Q. Given a list of numbers and a number k, return whether any two numbers from the list add up to k. 
+For example, given [10, 15, 3, 7] and k = 17, we should return True, since 10 + 7 =17.??
+#include<iostream>
+#include<map>
+using namespace std;
+void keysearch(map<int,int>&m){ 
+  int search;
+  cout<<"Enter a number to search-";
+  cin>>search;
+  int j=0;
+  for(auto it1=m.cbegin();it1 != m.cend();it1++){
+             int k=j;
+             while(k--){
+                     it1++;
+                     }
+        for(auto it2=it1;it2 != m.cend();it2++){
+           if(it1->second+it2->second==search){
+              cout<<"Search pair present";
+              return;
+              }
+              }
+              j++;
+             }
+            cout<<"Search pair not present"; 
+           }  
+int main(){
+int n,value;
+int key;
+cout<<"Enter total element for your map";
+cin>>n;
+cout<<"Enter the elements-\n";
+map<int,int>m;
+for(int i=0;i<n;i++){
+   cout<<"Enter a unique key";
+  cin>>key;
+  cout<<"Enter the value";
+  cin>>value;
+  m.insert({key,value});
+  }
+ keysearch(m);
+   cout<<endl;
+   return 0;
+   }

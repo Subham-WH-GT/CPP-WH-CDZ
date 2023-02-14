@@ -1,0 +1,39 @@
+Q.(Use case of maps)
+/*---->   enter q queries
+              type1 queries--take name and marks and add to map
+              type2 queries--take name and erase marks of the named student
+              type3 queries--take name and display marks....*/
+#include<iostream>
+#include<map>
+using namespace std;
+int main(){
+int q,type,marks;
+cout<<"Enter total queries-";
+cin>>q;
+map<string,int>m;
+string name;
+
+for(int i=1;i<=q;i++){
+cout<<"Enter query type-";
+  cin>>type;
+     if(type==1){
+     cout<<"name of the student-";
+     cin>>name;
+     cout<<"marks";
+     cin>>marks;
+     m[name]=m[name]+marks; //we cannot do m.insert({name,marks}), bcz this will only insert the marks 
+                                                       //and ll not update...hance we did m[marks]+marks to add the marks for same key!
+     }
+    if(type==2){
+    cout<<"name";
+    cin>>name;
+    m.erase(name);
+    }
+    if(type==3){
+    cout<<"name";
+    cin>>name;
+    cout<<m[name]<<endl;
+    }
+   }
+  return 0;
+  }
