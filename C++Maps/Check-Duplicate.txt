@@ -1,0 +1,67 @@
+ Q.(Given an integer array nums, return true if any value appears at least 
+
+     twice in the array, and return false if every element is distinct.)
+
+#include<iostream>
+
+#include<vector>
+
+#include<map>
+
+using namespace std;
+
+void checkDuplicate(vector<int>&v){
+
+map<int,int>m;
+
+for(int val: v){   //The iteration val:v implies-> the loop will traverse the entire vector v and everytime the int val will have the value of v
+
+ if(m[val]>0){          // the val is then uesd in the map to see if the val is repeated or not...
+
+   cout<<"True";
+
+   return;
+
+   }
+
+   m[val]++;
+
+  }
+
+  cout<<"False";
+
+  }
+
+int main(){
+
+int n;
+
+cout<<"Enter total element of the vector-";
+
+cin>>n;
+
+cout<<"Enter the elements-";
+
+vector<int>v(n);
+
+for(int i=0;i<n;i++){
+
+cin>>v[i];
+
+}
+
+cout<<"Elements of the vector are-\n";
+
+for(auto it=v.cbegin(); it!=v.cend(); it++){
+
+cout<<*it <<" ";
+
+}
+
+cout<<endl;
+
+checkDuplicate(v);
+
+return 0;
+
+}

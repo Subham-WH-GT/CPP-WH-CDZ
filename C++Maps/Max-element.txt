@@ -1,0 +1,55 @@
+Q.(Program to find max element present in the map)?
+
+#include<iostream>
+
+#include<map>
+
+#include<climits>
+
+using namespace std;
+
+int main(){
+
+int n;
+
+cout<<"Enter total elements of the map-";
+
+cin>>n;
+
+map<char,int>m;
+
+char j;
+
+int val;
+
+for(int i=1;i<=n;i++){
+
+cout<<"Enter key-";
+
+cin>>j;
+
+cout<<"Enter value";
+
+cin>>val;
+
+m.insert({j,val});
+
+}
+
+int maxelement=INT_MIN;
+
+for(auto it=m.cbegin(); it !=m.cend();it++){
+
+if(it->second > maxelement){
+
+maxelement=it->second;
+
+}
+
+}
+
+cout<<"Max element of the map is-"<<maxelement<<endl;
+
+return 0;
+
+}
