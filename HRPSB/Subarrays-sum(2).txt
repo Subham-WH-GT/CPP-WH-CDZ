@@ -1,0 +1,77 @@
+#include<iostream>
+
+#include<vector>
+
+using namespace std;
+
+int sum(vector<int>&vec,int f, int e,int num){
+
+int answer=0;
+
+for(int i=f;i<=e;i++){
+
+     if(vec[i]==0){
+
+       answer+=num;
+
+       }
+
+     else{
+
+        answer+=vec[i];
+
+        }
+
+       }
+
+      return answer;
+
+      }    
+
+int main(){
+
+   int n;
+
+   //cout<<"Enter length of the array-";
+
+   cin>>n;
+
+   vector<int>vec(n);
+
+   for(int i=1;i<=n;i++){
+
+    cin>>vec[i];
+
+    }
+
+   int q;
+
+   //cout<<"Enter total queries-";
+
+   cin>>q;
+
+   int t;
+
+   //cout<<"Press three-";
+
+   cin>>t;
+
+    while(q>0){
+
+       //cout<<"Enter credentials-";
+
+       int findex,eindex,num;
+
+       cin>>findex >>eindex>>num;
+
+       cout<<sum(vec,findex,eindex,num)<<endl;;
+
+       q--;
+
+       }
+
+       cout<<endl;
+
+       return 0;
+
+       }

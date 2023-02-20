@@ -1,0 +1,66 @@
+#include <iostream>
+
+#include <vector>
+
+
+
+using namespace std;
+
+
+
+int main() {
+
+    int n, q;
+
+    cin >>n;
+
+
+
+    vector<int> numbers(n);
+
+    for (int i = 0; i < n; i++) {
+
+        cin >> numbers[i];
+
+    }
+
+       cin>>q;
+
+       int t;
+
+       cin>>t;
+
+    for (int i = 0; i < q; i++) {
+
+        int start, end, x;
+
+        cin >> start >> end >> x;
+
+
+
+        int sum = 0;
+
+        for (int j = start - 1; j < end; j++) {
+
+            if (numbers[j] == 0) {
+
+                sum += x;
+
+            } else {
+
+                sum += numbers[j];
+
+            }
+
+        }
+
+        cout << sum << endl;
+
+    }
+
+
+
+    return 0;
+
+}
+

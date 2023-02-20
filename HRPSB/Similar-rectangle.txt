@@ -1,0 +1,70 @@
+#include <iostream>
+
+#include <unordered_map>
+
+#include <vector>
+
+
+
+using namespace std;
+
+
+
+int count_similar_rectangles(vector<vector<int>>& sides) {
+
+    int count = 0;
+
+    unordered_map<double, int> ratios;
+
+
+
+    for (auto& rect : sides) {
+
+        double ratio = (double) rect[0] / rect[1];
+
+        if (ratios.count(ratio)) {
+
+            count += ratios[ratio];
+
+        }
+
+        ratios[ratio]++;
+
+    }
+
+
+
+    return count;
+
+}
+
+
+
+int main() {
+
+    int n,two;
+
+    cin >> n;
+
+   cin>>two;
+
+    vector<vector<int>> sides(n, vector<int>(2));
+
+    for (int i = 0; i < n; i++) {
+
+        cin >> sides[i][0] >> sides[i][1];
+
+    }
+
+
+
+    int count = count_similar_rectangles(sides);
+
+    cout << count << endl;
+
+
+
+    return 0;
+
+}
+

@@ -1,0 +1,88 @@
+#include <iostream>
+
+#include <vector>
+
+#include <string>
+
+
+
+using namespace std;
+
+
+
+// Function to check if a single swap can make the username smaller in alphabetical order
+
+bool canMakeSmaller(string username) {
+
+    int n = username.length();
+
+    for (int i = 0; i < n-1; i++) {
+
+        if (username[i] > username[i+1]) {
+
+           
+
+            return true;
+
+        }
+
+    }
+
+    return false;
+
+}
+
+
+
+int main() {
+
+    // Read input
+
+    int n;
+
+    cin >> n;
+
+    vector<string> usernames(n);
+
+    for (int i = 0; i < n; i++) {
+
+        cin >> usernames[i];
+
+    }
+
+    
+
+    // Check each username and store the result in a new vector
+
+    vector<string> results(n);
+
+    for (int i = 0; i < n; i++) {
+
+        if (canMakeSmaller(usernames[i])) {
+
+            results[i] = "YES";
+
+        } else {
+
+            results[i] = "NO";
+
+        }
+
+    }
+
+    
+
+    // Output the results
+
+    for (int i = 0; i < n; i++) {
+
+        cout << results[i] << endl;
+
+    }
+
+    
+
+    return 0;
+
+}
+

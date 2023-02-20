@@ -1,0 +1,70 @@
+#include <iostream>
+
+#include <vector>
+
+#include <algorithm>
+
+
+
+int main() {
+
+  int num_crews, num_repairs;
+
+  //std::cout << "Enter the number of crews and number of repairs: ";
+
+  std::cin >> num_crews;
+
+
+
+  std::vector<int> crews(num_crews);
+
+  
+
+  
+
+  //std::cout << "Enter the positions of the crews: ";
+
+  for (int i = 0; i < num_crews; i++) {
+
+    std::cin >> crews[i];
+
+  }
+
+  std::cin >>num_repairs;
+
+  std::vector<int>repairs(num_repairs);
+
+ // std::cout << "Enter the positions of the repairs: ";
+
+  for (int i = 0; i < num_repairs; i++) {
+
+    std::cin >> repairs[i];
+
+  }
+
+
+
+  std::sort(crews.begin(), crews.end());
+
+  std::sort(repairs.begin(), repairs.end());
+
+
+
+  int total_distance = 0;
+
+  for (int i = 0; i < num_crews; i++) {
+
+    total_distance += std::abs(crews[i] - repairs[i]);
+
+  }
+
+
+
+  std::cout<< total_distance << std::endl;
+
+
+
+  return 0;
+
+}
+

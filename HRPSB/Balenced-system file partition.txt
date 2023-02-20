@@ -1,0 +1,116 @@
+#include <iostream>
+
+#include <vector>
+
+#include <cmath>
+
+#include<climits>
+
+using namespace std;
+
+
+
+// Function to calculate the size of a subtree
+
+int calculate_size(vector<int>& parent, vector<int>& files_size, int node) {
+
+    int size = files_size[node];
+
+    for (int i = 0; i < parent.size(); i++) {
+
+        if (parent[i] == node) {
+
+            size += calculate_size(parent, files_size, i);
+
+        }
+
+    }
+
+    return size;
+
+}
+
+
+
+// Function to partition the tree into two subtrees with sizes as close as possible
+
+int partition_tree(vector<int>& parent, vector<int>& files_size) {
+
+    int n = parent.size();
+
+    int total_size = calculate_size(parent, files_size, 0);
+
+    int min_diff = INT_MAX;
+
+
+
+    // Try cutting each branch and calculate the size of the resulting subtrees
+
+    for (int i = 1; i < n; i++) {
+
+        int size1 = calculate_size(parent, files_size, i);
+
+        int size2 = total_size - size1;
+
+        int diff = abs(size1 - size2);
+
+        if (diff < min_diff) {
+
+            min_diff = diff;
+
+        }
+
+    }
+
+    return min_diff;
+
+}
+
+
+
+// Main function to take user input and call the partition_tree function
+
+int main() {
+
+    int n;
+
+    //cout << "Enter the number of directories: ";
+
+    cin >> n;
+
+
+
+    vector<int> parent(n);
+
+    vector<int> files_size(n);
+
+    //cout << "Enter the parent array: ";
+
+    for (int i = 0; i < n; i++) {
+
+        cin >> parent[i];
+
+    }
+
+    cout<<n<<endl; //if  doesnt work take this n as input instead of cout.
+
+    //cout << "Enter the files_size array: ";
+
+    for (int i = 0; i < n; i++) {
+
+        cin >> files_size[i];
+
+    }
+
+
+
+    int min_diff = partition_tree(parent, files_size);
+
+    cout<< min_diff << endl;
+
+
+
+    return 0;
+
+}
+

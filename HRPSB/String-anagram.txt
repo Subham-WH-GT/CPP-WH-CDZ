@@ -1,0 +1,98 @@
+#include <iostream>
+
+#include <vector>
+
+#include <string>
+
+#include <algorithm>
+
+#include <unordered_map>
+
+
+
+using namespace std;
+
+
+
+vector<int> count_anagrams(vector<string> dictionary, vector<string> query) {
+
+    vector<int> ans;
+
+    for (string q : query) {
+
+        string q_sorted = q;
+
+        sort(q_sorted.begin(), q_sorted.end());
+
+        unordered_map<string, int> freq_map;
+
+        for (string d : dictionary) {
+
+            string d_sorted = d;
+
+            sort(d_sorted.begin(), d_sorted.end());
+
+            freq_map[d_sorted]++;
+
+        }
+
+        ans.push_back(freq_map[q_sorted]);
+
+    }
+
+    return ans;
+
+}
+
+
+
+int main() {
+
+    int n_dict, n_query;
+
+    //cout << "Enter the number of strings in the dictionary: ";
+
+    cin >> n_dict;
+
+    vector<string> dictionary(n_dict);
+
+    //cout << n_dict;
+
+    for (int i = 0; i < n_dict; i++) {
+
+        cin >> dictionary[i];
+
+    }
+
+
+
+    //cout << "Enter the number of strings in the query: ";
+
+    cin >> n_query;
+
+    vector<string> query(n_query);
+
+    //cout<< n_query;
+
+    for (int i = 0; i < n_query; i++) {
+
+        cin >> query[i];
+
+    }
+
+
+
+    vector<int> ans = count_anagrams(dictionary, query);
+
+    for (int a : ans) {
+
+        cout << a <<endl;
+
+    }
+
+    cout << endl;
+
+    return 0;
+
+}
+

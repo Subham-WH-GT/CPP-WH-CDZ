@@ -1,0 +1,96 @@
+#include <iostream>
+
+#include <string>
+
+
+
+using namespace std;
+
+
+
+bool is_vowel(char c) {
+
+    return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+
+}
+
+
+
+string find_max_vowel_substring(string s, int k) {
+
+    if (s.length() < k) {
+
+        return "Not found!";
+
+    }
+
+    
+
+    int max_vowels = 0;
+
+    int max_vowels_index = 0;
+
+    
+
+    for (int i = 0; i <= s.length() - k; i++) {
+
+        int num_vowels = 0;
+
+        for (int j = i; j < i + k; j++) {
+
+            if (is_vowel(s[j])) {
+
+                num_vowels++;
+
+            }
+
+        }
+
+        if (num_vowels > max_vowels) {
+
+            max_vowels = num_vowels;
+
+            max_vowels_index = i;
+
+        }
+
+    }
+
+    
+
+    if (max_vowels == 0) {
+
+        return "Not found!";
+
+    }
+
+    
+
+    return s.substr(max_vowels_index, k);
+
+}
+
+
+
+int main() {
+
+    string s;
+
+    int k;
+
+    //cout << "Enter a string: ";
+
+    cin >> s;
+
+   // cout << "Enter a substring length: ";
+
+    cin >> k;
+
+    string result = find_max_vowel_substring(s, k);
+
+    cout<< result << endl;
+
+    return 0;
+
+}
+

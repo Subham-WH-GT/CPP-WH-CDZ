@@ -1,0 +1,103 @@
+#include<iostream>
+
+#include<vector>
+
+#include<cstring>
+
+using namespace std;
+
+int maxCost(vector<int>&vec1,vector<string>&vec2,int dc,int n){
+
+  int cmp=dc;
+
+  int count=0;
+
+  vector<int>max;
+
+  for(int i=0;i<n;i++){
+
+     if(vec2[i]=="legal"){
+
+         count+=vec1[i];
+
+         cmp--;
+
+         if(cmp==0){
+
+           max.push_back(count);
+
+           cmp=dc;
+
+           count=0;
+
+           }
+
+          }
+
+       else{
+
+         count+=vec1[i];
+
+         }
+
+       }
+
+     int answer=0;        
+
+   for(int i=0;i<max.size();i++){
+
+       if(max[i] > answer){
+
+           answer=max[i];
+
+           }
+
+          }
+
+      return answer;
+
+      }       
+
+int main(){
+
+  int n,m;
+
+ // string s;
+
+  //cout<<"Enter total laptops:";
+
+  cin>>n;
+
+  vector<int>vec(n);
+
+  vector<string>vec2(n);
+
+  for(int i=0;i<n;i++){
+
+    cin>>vec[i];
+
+    }
+
+   //cout<<"Press the value of n again:";
+
+   cin>>m;
+
+   for(int i=0;i<n;i++){
+
+     cin>>vec2[i];
+
+    // vec2.push_back(s);
+
+     }
+
+    int dc;
+
+    cin>>dc;
+
+    cout<<maxCost(vec,vec2,dc,n);
+
+    cout<<endl;
+
+    return 0;
+
+    }  

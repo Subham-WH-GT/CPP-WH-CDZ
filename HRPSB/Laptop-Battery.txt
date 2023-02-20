@@ -1,0 +1,51 @@
+#include <iostream>
+
+using namespace std;
+
+
+
+int getFinalCharge(int n, int events[]) {
+
+    int charge = 50; // initial charge
+
+    for (int i = 0; i < n; i++) {
+
+        charge += events[i]; // update charge based on event
+
+        if (charge > 100) charge = 100; // cap charge at 100%
+
+        else if (charge < 0) charge = 0; // cap charge at 0%
+
+    }
+
+    return charge;
+
+}
+
+
+
+int main() {
+
+    int n;
+
+    //cout << "Enter the number of events: ";
+
+    cin >> n;
+
+    int events[n];
+
+    //cout << "Enter the events (positive for charging, negative for playing): ";
+
+    for (int i = 0; i < n; i++) {
+
+        cin >> events[i];
+
+    }
+
+    int finalCharge = getFinalCharge(n, events);
+
+    cout <<finalCharge << endl;
+
+    return 0;
+
+}
