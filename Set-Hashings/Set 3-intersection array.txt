@@ -1,0 +1,89 @@
+Q.(Return size of intersection of two arrays)?
+
+#include<iostream>
+
+#include<vector>
+
+#include<set>
+
+using namespace std;
+
+void intersection(vector<int>&v1,vector<int>&v2){
+
+set<int>myset;
+
+int count=0;
+
+for(auto it=v1.cbegin();it != v1.cend();it++){
+
+myset.insert(*it);
+
+}
+
+for(auto it=v2.cbegin();it != v2.cend();it++){
+
+if(myset.find(*it) !=myset.cend()){
+
+count++;
+
+myset.erase(*it);
+
+}
+
+}
+
+cout<<"\nsize of intersection of both arrays is-"<<count;
+
+}
+
+int main(){
+
+int n,m;
+
+cout<<"Enter total elements of the array1-";
+
+cin>>n;
+
+vector<int>vec1(n);
+
+for(int i=0;i<n;i++){
+
+cin>>vec1[i];
+
+}
+
+cout<<"\nElements of the first array is-";
+
+for(auto it=vec1.cbegin();it != vec1.cend();it++){
+
+cout<<*it<<" ";
+
+}
+
+cout<<"\nEnter total elements of the array2-";
+
+cin>>m;
+
+vector<int>vec2(m);
+
+for(int i=0;i<m;i++){
+
+cin>>vec2[i];
+
+}
+
+cout<<"\nElements of the second array is-";
+
+for(auto it=vec2.cbegin();it != vec2.cend();it++){
+
+cout<<*it<<" ";
+
+}
+
+intersection(vec1,vec2);
+
+cout<<endl;
+
+return 0;
+
+}

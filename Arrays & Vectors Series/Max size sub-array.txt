@@ -1,0 +1,93 @@
+Q.(Given an array of integers, what is the length of the longest subarray containing no more than two 
+
+         distinct values such that the distinct values differ by no more than 1?)
+
+#include<iostream>
+
+#include<vector>
+
+#include<climits>
+
+using namespace std;
+
+int function(vector<int>&v,int n){
+
+vector<int>vec;
+
+for(int i=0;i<n;i++){
+
+int length=0;
+
+ for(int j=0;j<n;j++){
+
+   if(v[j] == v[i] or v[j]==(v[i]+1)){
+
+      length++;
+
+      }
+
+     }
+
+    vec.push_back(length);  
+
+    }
+
+    
+
+  int max=INT_MIN;
+
+  int veclength=vec.size();
+
+  for(int i=0;i<veclength;i++){
+
+    if(vec[i]>max){
+
+         max=vec[i];
+
+         }
+
+        } 
+
+    return max;
+
+   }     
+
+int main(){
+
+int n;
+
+cout<<"Enter total element of the array-";
+
+cin>>n;
+
+vector<int>v(n);
+
+cout<<"Enter the elements of the array-";
+
+for(int i=0;i<n;i++){
+
+cin>>v[i];
+
+}
+
+cout<<"The elements of the array are-\n";
+
+for(int i=0;i<n;i++){
+
+cout<<v[i]<<" ";
+
+}
+
+cout<<endl;
+
+int result;
+
+result=function(v,n);
+
+cout<<"Max size of the sub-array is-"<<result;
+
+cout<<endl;
+
+return 0;
+
+}
