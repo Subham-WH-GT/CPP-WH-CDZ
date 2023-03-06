@@ -1,0 +1,223 @@
+Q.(Program to print intersection and Union of the given two link-lists...order of resultant list doesn't matter)?
+
+    example: i/p: 1-->2-->4-->5
+
+                              2-->5-->10
+
+                      o/p: intr:2-->5
+
+                              uni: 1-->2-->4-->5-->10
+
+                              
+
+                                      
+
+#include<iostream>
+
+#include<unordered_set>
+
+using namespace std;
+
+class node{
+
+        public:
+
+            int data;
+
+            node * next;
+
+            node(int val){
+
+               data=val;
+
+               next=NULL;
+
+               }
+
+              };
+
+void elementsOfLl(node* &head,int val){
+
+                node* n=new node(val);
+
+                if(head==NULL){
+
+                    head=n;
+
+                    return;
+
+                    }
+
+                  node* temp=head;
+
+                  while(temp->next != NULL){
+
+                      temp=temp->next;
+
+                      }
+
+                     temp->next=n;
+
+                     }
+
+void displayElements(node * head){
+
+  node* temp=head;
+
+    while(temp != NULL){
+
+        cout<<temp->data<<" ";
+
+        temp=temp->next;
+
+        }
+
+      cout<<endl;
+
+      }
+
+ void intersectionList(node*&head1,node*&head2){
+
+    unordered_set<int>myset;
+
+    node* temp=head1;
+
+    while(temp != NULL){
+
+       myset.insert(temp->data);
+
+       temp=temp->next;
+
+       }
+
+    node* temp2=head2;
+
+    node* head3=NULL;
+
+    while(temp2 != NULL){
+
+      if(myset.find(temp2->data) != myset.cend())
+
+        {
+
+           elementsOfLl(head3,temp2->data);
+
+           }
+
+         temp2=temp2->next;
+
+        }
+
+        cout<<"Intersection List contains following elements-\n";
+
+      displayElements(head3);                                          
+
+     }
+
+  void unionList(node* head1,node* head2){
+
+       unordered_set<int>myset;
+
+       node *temp1=head1;
+
+       node* temp2=head2;
+
+       while(temp1 != NULL || temp2 !=NULL){
+
+          if(temp1 != NULL and temp2 !=NULL){
+
+             myset.insert(temp1->data);
+
+             temp1=temp1->next;
+
+             myset.insert(temp2->data);
+
+             temp2=temp2->next;
+
+             }
+
+           else if(temp1 != NULL){
+
+                myset.insert(temp1->data);
+
+                temp1=temp1->next;
+
+                }
+
+             else {
+
+                myset.insert(temp2->data);
+
+                temp2=temp2->next;
+
+                }
+
+              }
+
+          node* head3=NULL;
+
+          for(auto it=myset.cbegin();it !=myset.cend();it++){
+
+             elementsOfLl(head3,*it);
+
+             }
+
+             cout<<"Union list is: ";
+
+            displayElements(head3);
+
+            }         
+
+   int main(){
+
+     node* head1=NULL;
+
+     node*head2=NULL;
+
+     int n,m;
+
+     cin>>n;
+
+     cout<<"Enter elements of the first LL: ";
+
+     for(int i=1;i<=n;i++){
+
+       int x;
+
+       cin>>x;
+
+       elementsOfLl(head1,x);
+
+       }
+
+      cout<<"First LL is- "; 
+
+      displayElements(head1);  
+
+      cin>>m;
+
+     cout<<"Enter elements of the second LL: ";
+
+     for(int i=1;i<=m;i++){
+
+       int x;
+
+       cin>>x;
+
+       elementsOfLl(head2,x);
+
+       }
+
+      cout<<"second LL is- "; 
+
+      displayElements(head2);
+
+      intersectionList(head1,head2);
+
+      unionList(head1,head2);
+
+      cout<<endl;
+
+      return 0;
+
+      }   
