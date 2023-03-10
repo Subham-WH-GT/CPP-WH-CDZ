@@ -1,0 +1,133 @@
+Stack--It is a dataStructure that stores and returns elements in the form of LIFO (Last In First Out).
+
+     Q.(Implementing stacks using arrays)
+
+
+
+#include<iostream>
+
+using namespace std;
+
+#define n 50
+
+class stack{
+
+
+
+       int *array;
+
+       int top;
+
+               public:
+
+                     stack ( ){
+
+                        array=new int[n];
+
+                        top=-1;
+
+                       }
+
+                void push(int x){
+
+                   if(top==n-1){ 
+
+                      cout<<"Stack overflowed..."<<endl;
+
+                      return;
+
+                      }
+
+                    
+
+                       top++;
+
+                       array[top]=x;
+
+                         
+
+                     }
+
+                 void pop(){
+
+                    if(top==-1){
+
+                       cout<<"Stack is empty..."<<endl;
+
+                       return;
+
+                       }
+
+                     
+
+                         top--;
+
+                        
+
+                       }
+
+                    int Top ( ){
+
+                          if(top==-1){
+
+                            cout<<"Stack is empty ";
+
+                              return -1;
+
+                              }
+
+                           else
+
+                              return array[top];
+
+                              
+
+                            }
+
+                        bool empty(){
+
+                            return top==-1;
+
+                            }
+
+                     };                                  
+
+int main(){
+
+  cout<<"Implementing stack using arrays-\n";
+
+  stack stk;
+
+    stk.push(2);
+
+        cout<<stk.empty()<<endl;
+
+        stk.push(19);   
+
+            stk.push(28);
+
+                stk.push(-1);
+
+                  cout<<stk.Top()<<endl;
+
+                  stk.pop();
+
+                     cout<<stk.Top()<<endl;
+
+                         stk.pop();
+
+                             stk.pop();
+
+                                 stk.pop();
+
+                                 cout<<stk.Top()<<endl;
+
+                                   cout<<stk.empty();
+
+                                      return 0;
+
+                                      }
+
+                  
+
+                  

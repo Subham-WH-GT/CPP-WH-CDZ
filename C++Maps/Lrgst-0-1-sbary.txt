@@ -1,0 +1,69 @@
+Q.(Given an array containing only 0s and 1s, find the largest subarray which contains equal no of 0s and 1s. return the length of the subarray)?
+
+#include<iostream>
+
+#include<map>
+
+#include<vector>
+
+using namespace std;
+
+int maxSubarrayLen(vector<int>&vec){
+
+map<int,int>mymap;
+
+mymap[0]=0;
+
+mymap[1]=0;
+
+for(int i=0;i<vec.size();i++){
+
+  if(vec[i]==0){
+
+    mymap[0]++;
+
+    }
+
+   else{
+
+     mymap[1]++;
+
+     }
+
+    }
+
+   return mymap[0]<mymap[1]? 2*mymap[0] : 2*mymap[1];
+
+   }   
+
+int main(){
+
+int n;
+
+cout<<"Enter total size of the vector: ";
+
+cin>>n;
+
+vector<int>vec(n);
+
+for(int i=0;i<n;i++){
+
+cin>>vec[i];
+
+}
+
+cout<<"Entered elements of  the vector are: ";
+
+for(auto it=vec.cbegin(); it!= vec.cend();it++){ 
+
+   cout<< *it <<" ";
+
+   }
+
+cout<<"\nLength of the max subarray is: "<<maxSubarrayLen(vec);
+
+cout<<endl;
+
+return 0;
+
+}   

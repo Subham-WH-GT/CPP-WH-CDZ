@@ -1,0 +1,145 @@
+Q.(Stacks using Linked-list)?
+
+#include<iostream>
+
+using namespace std;
+
+class node{
+
+        public: 
+
+            int data;
+
+            node* next;
+
+               node(int val){
+
+                   data=val;
+
+                   next=NULL;
+
+                   }
+
+                  };
+
+  class stack{
+
+         node * top;
+
+            public:
+
+                stack( ){
+
+                    top=NULL;
+
+                    }
+
+                    
+
+          void push(int x){
+
+               node* temp=new node(x);
+
+                 temp->next=top;
+
+                 top=temp;
+
+                 }
+
+         void pop( ){
+
+            if(top==NULL){
+
+                cout<<"Stack is empty\n";
+
+                   return;
+
+                   }
+
+            node* todelete=top;
+
+            top=top->next;
+
+            delete todelete;
+
+            }
+
+          int Top(){
+
+            if(top==NULL){
+
+               cout<<"Stack is empty\n";
+
+               return -1;
+
+               }  
+
+            return top->data;
+
+            }
+
+         bool empty( ){
+
+             return top==NULL;
+
+             }
+
+           void display( ){
+
+                  if(top==NULL){
+
+                     cout<<"Stack is empty\n";
+
+                     return;
+
+                     } 
+
+                  node* temp=top;
+
+                  while(temp != NULL){
+
+                       cout<<temp->data<<" ";
+
+                       temp=temp->next;
+
+                       }
+
+                       cout<<endl;
+
+                      }
+
+                 }; 
+
+int main(){
+
+     stack stk;
+
+        stk.push(2);
+
+        stk.push(5);
+
+        stk.display();
+
+        cout<<stk.Top()<<endl;
+
+        stk.pop();
+
+        cout<<stk.Top()<<endl;
+
+        cout<<stk.empty()<<endl;
+
+         stk.display();
+
+         stk.pop();
+
+         cout<<stk.Top()<<endl;
+
+            stk.display();
+
+            cout<<stk.empty()<<endl;
+
+             stk.pop();
+
+        return 0;
+
+        }
