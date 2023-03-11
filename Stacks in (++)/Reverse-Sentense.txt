@@ -1,0 +1,49 @@
+Q.(Reverse string using stack)?
+
+#include<iostream>
+
+#include<stack>
+
+using namespace std;
+
+void reverseString(string s){
+
+   stack<string>mystk;
+
+     for(int i=0;i<s.length();i++){
+
+              string word="";
+
+                  while(s[i] != ' ' and i<s.length()){
+
+                      word+=s[i];
+
+                      i++;
+
+                      }
+
+                    mystk.push(word);
+
+                    }
+
+              while(! mystk.empty()){
+
+                         cout<<mystk.top()<<" ";
+
+                         mystk.pop();
+
+                         }
+
+                      }                   
+
+int main(){
+
+  string s = "buddy, subham is great.";
+
+  reverseString(s);
+
+  cout<<endl;
+
+  return 0;
+
+  }

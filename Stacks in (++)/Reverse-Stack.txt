@@ -1,0 +1,79 @@
+Q.(Program to reverse a stack)?
+
+#include<iostream>
+
+#include<stack>
+
+using namespace std;
+
+
+
+void insertAtBottom(stack<int>&stk2,int bottomElement){
+
+       if(stk2.empty( )){
+
+           stk2.push(bottomElement);
+
+                return;
+
+                  }
+
+                    int topElement=stk2.top( );
+
+                       stk2.pop( );
+
+                          insertAtBottom(stk2,bottomElement);
+
+                             stk2.push(topElement);
+
+                              }
+
+
+
+void reverseStack(stack<int>&stk1){
+
+    if( stk1.empty( )){
+
+        return;
+
+        }     
+
+   
+
+   int topElement=stk1.top();
+
+      stk1.pop();
+
+        reverseStack(stk1);
+
+           insertAtBottom(stk1,topElement);
+
+           }    
+
+int main(){
+
+   stack<int>mystk;
+
+   mystk.push(1);
+
+    mystk.push(2);
+
+     mystk.push(3);
+
+      mystk.push(4);
+
+        reverseStack(mystk);
+
+          while( ! mystk.empty()){
+
+              cout<<mystk.top( )<<endl;
+
+                mystk.pop( );
+
+                }
+
+              cout<<endl;
+
+              return 0;
+
+              }  
