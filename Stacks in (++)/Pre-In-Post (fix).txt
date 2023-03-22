@@ -1,0 +1,235 @@
+computer understands only prefix and postfix expressions while human 
+generally follows infix expressions-
+
+convert the following infix expressions into prefix expressions--
+1.  4*2+3---This is the infix expressions 
+ -> ((4*2)+3)
+     +*423---This is the prefix expression
+
+2.  5-6/3
+ -> (5-(6/3))
+    (5-/63)
+     -5/63
+
+convert the following infix expressions into postfix expressions--
+1.  4*2+3---This is the infix expression
+ -> ((4*2)+3)
+    42*+3
+    42*3+--This is the postfix expression
+
+2. 5-6/3
+ -> (5-(6/3))
+     5-63/
+     563/-   
+
+
+
+Q.(Program to evaluate prefix expression using stacks)
+
+
+
+/*ex:  
+
+     i/p ->   -+7*45+20
+
+     o/p->  25 */
+
+#include<iostream>
+
+#include<stack>
+
+#include<cmath>
+
+using namespace std;
+
+int evaluate(string s){
+
+  stack<int>mystack;
+
+  for(int i=s.length()-1;i>=0;i--){
+
+    if(s[i]>='0' and s[i]<='9'){
+
+       mystack.push(s[i]-'0');
+
+       }
+
+      else{
+
+          int num1=mystack.top();
+
+          mystack.pop();
+
+          int num2=mystack.top();
+
+          mystack.pop();
+
+          switch(s[i]){
+
+            case '+':
+
+               mystack.push(num1+num2);
+
+               break;
+
+             case '-':
+
+                mystack.push(num1-num2);
+
+                break;
+
+              case '*':
+
+                mystack.push(num1*num2);
+
+                break;
+
+                case '/' :
+
+                  mystack.push(num1/num2);
+
+                  break;
+
+                    case '^':
+
+                      mystack.push(pow(num1,num2));
+
+                      break;  
+
+                    }
+
+                  }
+
+                }
+
+            return mystack.top();
+
+            }            
+
+int main(){
+
+string s="+*423";
+
+cout<<"Input prefix expression is: ";
+
+for(int i=0;i<s.length()-1;i++){
+
+ cout<<s[i]<<" ";
+
+ }
+
+cout<<endl;
+
+cout<<"Evaluated value is: "<<evaluate(s);
+
+cout<<endl;
+
+return 0;
+
+} 
+
+
+
+
+
+
+
+Q.(Program to evaluate the following postfix expression)?
+
+
+
+/* Ex-
+
+            i/p->  46+2/5*7+
+
+            o/p-> 32 */
+
+            
+
+#include<iostream>
+
+#include<stack>
+
+#include<cmath>
+
+using namespace std;
+
+int evaluate(string s){
+
+   stack<int>mystack;
+
+   for(int i=0;i<s.length();i++){
+
+     if(s[i]>='0' and s[i]<='9'){
+
+        mystack.push(s[i]-'0');
+
+        }
+
+      else{
+
+        int num2=mystack.top();
+
+         mystack.pop();
+
+        int num1=mystack.top();
+
+         mystack.pop();
+
+           switch(s[i]){
+
+             case '+':
+
+                 mystack.push(num1+num2);
+
+                 break;
+
+              case '-':
+
+                  mystack.push(num1-num2);   
+
+                  break;
+
+               case '*' :
+
+                   mystack.push(num1*num2);
+
+                   break;
+
+                case '/':
+
+                   mystack.push(num1/num2);
+
+                   break;
+
+                 }
+
+               }
+
+             }
+
+          return mystack.top();
+
+          }                
+
+int main(){
+
+  string s="46+2/5*7+";
+
+  cout<<"Input postfix expression is: ";
+
+  for(int i=0;i<s.length();i++){
+
+     cout<<s[i]<<" ";
+
+     }
+
+     cout<<endl<<"Evaluated value is: "<<evaluate(s);
+
+     cout<<endl;
+
+     return 0;
+
+     }
+
+       
