@@ -1,0 +1,51 @@
+Q.(Understading the basics of OOPS using classes and objects)?
+
+#include<iostream>
+
+using namespace std;
+
+// create class with name fruit-
+
+class fruit {
+
+     // declare the properties as public to manipulate the properties in main as objects--   
+
+       public:
+
+                  string name;
+
+                  string color;
+
+         }; 
+
+int main(){
+
+// declare objects using the class name as datatype--
+
+    fruit apple ;
+
+ // set the properties of the objects--
+
+    apple.name="APPLE";
+
+    apple.color="Red";
+
+cout<<"Defined properties of  the fruit is--\n Type="<<apple.name<<"\nColor="<<apple.color;
+
+// declaring objects  as pointers using NEW keyword--
+
+  fruit *mango=new fruit();
+
+//properties are set using arrow(->) NOT dot(.)
+
+mango->name="MANGO";
+
+mango->color="Yelloworange";
+
+cout<<"\nDefined properties of the fruit is--\nType="<<mango->name<<"\nColor="<<mango->color;
+
+cout<<endl;
+
+return 0;
+
+}

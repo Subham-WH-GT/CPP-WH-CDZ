@@ -1,0 +1,81 @@
+...Concept of Constructor...
+
+#include<iostream>
+
+using namespace std;
+
+class rectangle{
+
+       public:
+
+              int length;
+
+              int breadth;
+
+        // Now we will use constructor to declare this properties--
+
+        // Basically there are there ways to define a Constructor--
+
+        
+
+        //Default constructor--
+
+            rectangle(){
+
+                 length=4;
+
+                 breadth=6;      
+
+          }
+
+          
+
+        //Parameterized constructor--
+
+           rectangle( int l, int b){
+
+                   length=l;
+
+                   breadth=b;
+
+                   }
+
+       // copy constructor --
+
+           rectangle(rectangle& r){
+
+                 length=r.length;
+
+                 breadth=r.breadth;
+
+                 }
+
+             };
+
+          
+
+          int main(){
+
+                  rectangle r1;
+
+                cout<<"First rectangle using default cons--\nLength="<<r1.length<<"\nBreadth="<<r1.breadth;
+
+                                       
+
+              rectangle r2(2,3);
+
+              cout<<"\nSecond rectangle using parameterized cons--\nLength="<<r2.length<<"\nBreadth="<<r2.breadth;
+
+              
+
+              rectangle r3(r2);
+
+                   cout<<"\nThird rectangle using copy cons--\nLength="<<r3.length<<"\nBreadth="<<r3.breadth;
+
+                   
+
+               cout<<endl;
+
+               return 0;
+
+               }    
