@@ -1,0 +1,45 @@
+// Encapsulation is the way in which we can bind data and methods in a class together !!
+
+
+
+/* It is also called as data hiding...if say object1 is willing to fetch data from object2 then obj1
+
+     directly cannot use the data of object 2...it has to call the methods of the object 2 to fetch the data of object 2..
+
+     */
+
+     #include<iostream>
+
+     using namespace std;
+
+     class cricket{
+
+              private:
+
+                   string teamName="India";
+
+                   
+
+                 public:
+
+                    void getName( ){
+
+                          cout<<teamName;
+
+                          }
+
+                     };
+
+    int main( ){
+
+             cricket blue;
+
+             blue.getName( );
+
+             cout<<endl;
+
+             return 0;
+
+             }           
+
+     

@@ -1,0 +1,83 @@
+... Understanding destructor ... 
+
+
+
+#include<iostream>
+
+using namespace std;
+
+ class cricket{
+
+            public:
+
+              string team;
+
+              int players;
+
+      // A constructor is called here         
+
+            cricket(string teamName){
+
+                        team=teamName;
+
+                        players=11;
+
+                        }
+
+   // destructor is basically a special function that is used to delete/destroy permanently the objects created;
+
+   
+
+   // Syntax for destructor--
+
+      /* -->A tilde symbol (~) is used and the name is as same as the class name
+
+          -->No parameters are passed in the function.
+
+          -->In main function we dont need to call explicitly the destructor function is 
+
+           automatically called at the end of the objects being created 
+
+          --> Another way to use destructor is by using the delete keyword this need to call explicitly whenever required; (delete
+
+                  keyword is applicable only for pointer type constructor)
+
+           --> Unlike normal constructor  where we dont need to call the destructor explicitly in the main whereas in a
+
+                    Constructor created through pointers we need to call the destructor explicitly using delete keyword       */
+
+                  
+
+     ~cricket() {
+
+        cout<<"Destructor is called";                     
+
+                  }
+
+        };
+
+        
+
+        int main(){
+
+         cricket *Yellow=new cricket("Yellow");
+
+          cout<<"TeamName="<<Yellow->team<<"\nPlayers="<<Yellow->players<<endl;
+
+          delete Yellow;
+
+           cricket Blue("INDIA");
+
+           //Blue.team="INDIA";
+
+           cout<<"\nTeamName="<<Blue.team<<"\nPlayers="<<Blue.players;
+
+           cout<<endl;
+
+          
+
+           return 0;
+
+           }                      
+
+                        

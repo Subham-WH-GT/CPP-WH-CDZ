@@ -1,0 +1,79 @@
+Inheritance :
+
+           // Definition : It is the property in which one class can inherit the properties of another class.
+
+          
+
+Access Specifiers:
+
+         /* It defines the way in which the data is inherited from one object to another . . .
+
+             It is of three types--
+
+                 -->Public:  Any class can inherit the data which is declared publicly.
+
+                 -->Private:  Only the original class or the parent class can use the data declared privately.
+
+                 -->Protected: The original class,Parent class and the derived class can use the data declared protected.
+
+                */ 
+
+Example --
+
+        class vehicle {
+
+               public:
+
+                        int tyre;
+
+                       
+
+                  protected:
+
+                            string brand;
+
+                          
+
+                          private:
+
+                                     int price;
+
+                                };
+
+          // Syntax to inherit a class--
+
+               
+
+                    class wheel_4: public vehicle {
+
+                              // tyre : is public and is accessible
+
+                              // brand: will be in protected form can be accessible
+
+                              // price : Is inaccessible since it is private in vehicle;
+
+                              };
+
+                       
+
+                     class wheel_2: protected vehicle {
+
+                              // tyre: Inherited in Protected format;
+
+                              // brand: Inherited in protected format;
+
+                              // price: Is still inaccessible;
+
+                             };                                                              
+
+                           
+
+                        class wheel_6:private vehicle {
+
+                           // tyre:Inherited in private format
+
+                           // brand: inherited in private format
+
+                           //price: Is still inaccessible
+
+                           };     

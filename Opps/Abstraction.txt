@@ -1,0 +1,13 @@
+Abstraction :
+
+      /* It is a process in which only the essential information is passed with keeping the non-essential information
+
+           hidden.
+
+            like--In a class/object abstraction is useful for a methods...where only the function call and the output result
+
+                  is observed keeping the implementation details hidden.
+
+                  like for a function say POW--we use it  as POW(x,y) and the result comes out as x^y...but how the function is 
+
+                    implemented is not known to us or is actually hidden to us, this is how abstraction works... 

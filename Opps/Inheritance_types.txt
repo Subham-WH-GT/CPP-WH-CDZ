@@ -1,0 +1,189 @@
+// Types of inheritance--
+
+#include<iostream>
+
+using namespace std;
+
+
+
+class vehicle {
+
+    public:
+
+            vehicle( ){
+
+                cout<<"This is a general vehicle\n";
+
+                }
+
+              };
+
+     // Single inheritance . . .  --> Here the child class derive properties from the parent class.        
+
+  class bike: public vehicle{
+
+         public:              
+
+                 bike( ){
+
+                       cout<<"This is bike under vehicle";
+
+                       }
+
+                      };
+
+    /* Multi-level inheritance . . . -->Here the child class derive properties from parent class and the parent class inturn derive 
+
+        properties from any other class. */
+
+       
+
+       class grandparent{
+
+           public:
+
+               grandparent( ){
+
+                  cout<<"This is the grand-parent class\n";
+
+                  }
+
+                 };
+
+        
+
+       class parent: public grandparent{
+
+             public: 
+
+                  parent( ){
+
+                       cout<<"This is the parent class\n";
+
+                       }
+
+                     };
+
+                   
+
+            class child: public parent {
+
+               public: 
+
+                      child( ){
+
+                          cout<<"This is the child class\n";
+
+                          }
+
+                       };              
+
+           
+
+           /* multiple inheritance---Here the child class inherit from multiple parent . . .*/
+
+           
+
+           class father{
+
+                   public:
+
+                      father( ){
+
+                              cout<<"I'm the father\n";
+
+                              }
+
+                           };
+
+              
+
+           class mother {
+
+                   public:
+
+                       mother( ){
+
+                                 cout<<"I'm the mother\n";
+
+                                 }
+
+                          };
+
+          class son : public father, public mother {
+
+                   public:
+
+                       son( ){
+
+                              cout<<"I'm their son";
+
+                              }
+
+                          };                                              
+
+                                         
+
+         // Hierarchical inheritance---Here multiple child class inherits same parent !
+
+         
+
+         /*Hybrid inheritance---Here both the child class which inherits properties from parent 
+
+            class behaves as a parent for any other child class */ 
+
+            
+
+         /* Diamond Problem-- Here the base class/child class has multiple parent class which has some common ancestor.
+
+                
+
+                schematic:                                                      class ancestor
+
+                                                                                    /  \  
+
+                                                                                  /     \
+
+                                                                                /        \                            
+
+                                                                      class parent_1        class parent_2 
+
+                                                                           /                \
+
+                                                                         /                   \
+
+                                                                  class_son                 class_daughter
+
+                                                                         \                   /
+
+                                                                          \                /
+
+                                                                           \             /
+
+                                                                            \          /
+
+                                                                             \       /
+
+                                                                              \    /
+
+                                                                         class friend
+
+                                                                     ( Here clearly the ancestor class will be called two times when we ll call the class friend)      
+
+                                                                                                                                                                            */                                              
+
+   int main( ){
+
+    bike honda; // since the class bike is a child class of vehicle so whenever the child-class 
+
+       // bike is called it will first execute the parent and then the child class. 
+
+         
+
+     child me;
+
+  son me;
+
+      return 0;
+
+      }                    
