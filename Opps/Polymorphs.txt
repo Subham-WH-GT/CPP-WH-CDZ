@@ -1,0 +1,177 @@
+   /*  Polymorphism:  "It is a concept in Oop through which an object or method of same name can take multiple forms
+
+                                 and can be used according to the need."
+
+                                 
+
+                              Ploymorphism can be classified into two types--
+
+                                 1. Compile-time polymorphism : It ocuurs during compilation of the program.
+
+                                 
+
+                                                    It is of two types--
+
+                                                          1. Method overloading: Here mathods of same name can used multiple times with multiple 
+
+                                                                                                      operations by changing the no. of parameters.
+
+                                                                                                      
+
+                                                          2.   operator overloading: Here same operator is used in function with same name but with different 
+
+                                                                  meaning...say for (+) can be used to add two int values and another time it can be used to
+
+                                                                    concatenate two strings.                                                 
+
+                                 2. Run time polymorphism : It occurs while running the program.     
+
+                                  
+
+                                                 It is also of following types--
+
+                                                 
+
+                                                 1. Function Overriding: Here the child class inherits the function of the parent class but modifies
+
+                                                                                                   the implementation of the function keeping  the name of the function same.
+
+                                                                                                   function over-riding is done by using a virtual Keyword in the parent class
+
+                                                                                                                                             */
+
+                                 
+
+                                 
+
+                                 
+
+  #include<iostream>
+
+  using namespace std;
+
+
+
+ // Function overloading--
+
+class sum {
+
+      public:
+
+               void add(int x, int y){
+
+                    int sum=x+y;
+
+                    cout<<"Sum: "<<sum<<endl;
+
+                    }
+
+                  
+
+                  void add (int a, int b, int c){
+
+                         int sum=a+b+c;
+
+                         cout<<"Sum: "<<sum<<endl;
+
+                         }
+
+                         
+
+                    void add (float c, float d){
+
+                        int sum=c+d;
+
+                        cout<<"Sum: "<<sum<<endl;
+
+                        }
+
+     };
+
+     
+
+    // Function Over-riding--
+
+    
+
+    class parent {
+
+                          public :
+
+                                 virtual void print ( ) {
+
+                                          cout<<"This the parent print function\n";
+
+                                           }
+
+                                           void show( ){
+
+                                              cout<<"This is the parent show function\n";
+
+                                              }
+
+                                           };
+
+                 
+
+    class child: public parent {
+
+                           public :
+
+                                      void print( ){
+
+                                              cout<<"This is the child Print\n";
+
+                                              }
+
+                                              
+
+                                          void show ( ){
+
+                                               cout<<"This is the child show\n";
+
+                                               }
+
+                                };                                                             
+
+               
+
+
+
+  int main(){
+
+
+
+                sum c;
+
+                c.add(2,3,4);
+
+                c.add(2,3);
+
+                c.add(float(2.5),float(2.5));
+
+                
+
+                cout<<"Today\n";
+
+                
+
+               parent *p;
+
+               child C;
+
+               p=&C;
+
+               p->print();  // Here the output is child print since we have made the parent print function as virtual hence the function call
+
+                                      // of child has happened..
+
+               p->show(); // while here the output is parent show although parent p stores the address of child C because the show function is not virtual
+
+                
+
+              return 0;
+
+              
+
+           }     

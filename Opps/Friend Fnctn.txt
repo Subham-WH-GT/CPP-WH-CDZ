@@ -1,0 +1,66 @@
+/* Friend Function--> It is a non member function which can access any private data present in that class
+
+                         */
+
+                            
+
+                            
+
+        #include<iostream>
+
+        using namespace std;
+
+        
+
+        class cricket {
+
+                 int x;
+
+                
+
+               public:  
+
+                 cricket(int y){
+
+                             x=y;
+
+                             }
+
+                             
+
+                         friend   void print( cricket &me);
+
+                 };
+
+                 
+
+             void print( cricket &me){
+
+                   cout<<me.x<<endl;    
+
+                  }
+
+                          
+
+        int main(){
+
+        
+
+          //  cricket me(11);
+
+           // cout<<me.x;   here it doesnot works because x is stored privately in the class
+
+           
+
+           cricket me(11);
+
+           print (me); // here with the use of friend function we can  now access the private data of the class
+
+            return 0;
+
+            }
+
+                     
+
+
+
